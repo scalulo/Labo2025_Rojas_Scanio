@@ -1,3 +1,5 @@
+package Unidad0;
+
 public class IngresarDatos {
     public static void main(String[] args) {
         int N;

@@ -1,3 +1,5 @@
+package Unidad0;
+
 public class DivisibleFor {
     public static void main(String[] args) {
         System.out.println("Con for");
