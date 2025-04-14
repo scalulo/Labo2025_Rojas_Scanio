@@ -1,7 +1,4 @@
-package Unidad0;
-
-import Unidad1.Fecha;
-import Unidad1.Persona;
+package Unidad1;
 
 import java.time.LocalDate;
 
@@ -15,6 +12,14 @@ public class Libro {
 
     public Libro() {
         this.titulo = "Don quijote";
+        this.profesor = new Persona();
+        this.isbn = 124214;
+        this.paginas = 321;
+        this.editorial = "pepo";
+        this.fecha = new Fecha();
+    }
+    public Libro(String titulo1){
+        this.titulo=titulo1;
         this.profesor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
@@ -85,10 +90,11 @@ public class Libro {
         System.out.println("paginas: "+getPaginas());
     }
     public boolean fecha_igual(Libro libro){
-        LocalDate f1 = LocalDate.of(getFecha().getDia(), getFecha().getMes(), getFecha().getAnio());
-        LocalDate f2 = LocalDate.of(libro.getFecha().getDia(), libro.getFecha().getMes(), libro.getFecha().getAnio());
+        LocalDate f1 = LocalDate.of(getFecha().getAnio(), getFecha().getMes(), getFecha().getDia());
+        LocalDate f2 = LocalDate.of(libro.getFecha().getAnio(), libro.getFecha().getMes(), libro.getFecha().getDia());
         return f1.isBefore(f2);
     }
+
 
     public static void main(String[] args) {
         String titulo="La biblia";
@@ -97,10 +103,12 @@ public class Libro {
         int paginas=213;
         String editorial="manu";
         Fecha fecha= new Fecha(4, 6, 2022);
+
         Libro l1= new Libro();
         Libro l2= new Libro(titulo,profesor,isbn,paginas,editorial,fecha);
+        Libro l3= new Libro("martin fierro");
         l1.mostrar();
-        System.out.println("¿f1 es menor que f2? " + l1.fecha_igual(l2));
+        System.out.println("f1 es menor que f2 " + l1.fecha_igual(l2));
 
     }
 }
