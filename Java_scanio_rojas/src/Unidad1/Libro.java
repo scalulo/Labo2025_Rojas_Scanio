@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Libro {
     private String titulo;
-    private Persona profesor;
+    private Persona autor;
     private int isbn;
     private int paginas;
     private String editorial;
@@ -12,7 +12,7 @@ public class Libro {
 
     public Libro() {
         this.titulo = "Don quijote";
-        this.profesor = new Persona();
+        this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
         this.editorial = "pepo";
@@ -20,15 +20,15 @@ public class Libro {
     }
     public Libro(String titulo1){
         this.titulo=titulo1;
-        this.profesor = new Persona();
+        this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
         this.editorial = "pepo";
         this.fecha = new Fecha();
     }
-    public Libro (String titulo,Persona profesor,int isbn,int paginas,String editorial,Fecha fecha){
+    public Libro (String titulo,Persona autor,int isbn,int paginas,String editorial,Fecha fecha){
         this.titulo=titulo;
-        this.profesor=profesor;
+        this.autor=autor;
         this.isbn=isbn;
         this.paginas=paginas;
         this.editorial=editorial;
@@ -39,8 +39,8 @@ public class Libro {
         return titulo;
     }
 
-    public Persona getProfesor() {
-        return profesor;
+    public Persona getautor() {
+        return autor;
     }
 
     public int getIsbn() {
@@ -75,8 +75,8 @@ public class Libro {
         this.fecha = fecha;
     }
 
-    public void setProfesor(Persona profesor) {
-        this.profesor = profesor;
+    public void setautor(Persona autor) {
+        this.autor = autor;
     }
 
     public void setIsbn(int isbn) {
@@ -84,7 +84,7 @@ public class Libro {
     }
     public void  mostrar (){
         System.out.println("el titulo es: "+getTitulo());
-        System.out.println("el profe es: "+profesor.getNombre());
+        System.out.println("el profe es: "+autor.getNombre());
         System.out.println("el isbn es: "+getIsbn());
         System.out.println("la fecha es: "+getFecha().getDia()+"-"+getFecha().getMes()+"-"+getFecha().getAnio());
         System.out.println("paginas: "+getPaginas());
@@ -98,14 +98,14 @@ public class Libro {
 
     public static void main(String[] args) {
         String titulo="La biblia";
-        Persona profesor=new Persona();
+        Persona autor=new Persona();
         int isbn = 2453;
         int paginas=213;
         String editorial="manu";
         Fecha fecha= new Fecha(4, 6, 2022);
 
         Libro l1= new Libro();
-        Libro l2= new Libro(titulo,profesor,isbn,paginas,editorial,fecha);
+        Libro l2= new Libro(titulo,autor,isbn,paginas,editorial,fecha);
         Libro l3= new Libro("martin fierro");
         l1.mostrar();
         System.out.println("f1 es menor que f2 " + l1.fecha_igual(l2));
