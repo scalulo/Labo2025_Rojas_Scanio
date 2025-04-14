@@ -21,9 +21,10 @@ public class Circulo {
     }
 
     public double area() {
-        double a;
-        a = 3.14 * (radio * radio);
-        return  a;
+        double pi=Math.PI;          //en vez de poner pi pongo esto que es como acceder a una clase que tiene pi
+        double area;
+        area = pi * (radio * radio);
+        return  area;
 
     }
     public double perimetro(){

@@ -37,8 +37,16 @@ public class Coche {
         this.modelo = modelo;
     }
     public int acelererar(){
-        velocidad
+        int acelerada;
+        acelerada=velocidad+20;
+        return acelerada;
     }
+    public int frenar(){
+        int frenada;
+        frenada=velocidad-20;
+        return frenada;
+    }
+
 
     public static void main(String[] args) {
         String marca = "Toyota";
@@ -52,12 +60,17 @@ public class Coche {
         System.out.println("Marca de c1: " + c1.getMarca());
         System.out.println("Modelo de c1: " + c1.getModelo());
         System.out.println("Color de c1: " + c1.getColor());
-        System.out.println("Velocidad de c1" + c1.getVelocidad());
+        System.out.println("Velocidad actual de c1: " + c1.getVelocidad());
+        System.out.println("Velocidad cuando acelera de c1: " + c1.acelererar());
+        System.out.println("Velocidad cuando frena de c1: " + c1.frenar());
+
 
         System.out.println("Marca de c2: " + c2.getMarca());
         System.out.println("Modelo de c2: " + c2.getModelo());
         System.out.println("Marca de c2: " + c2.getColor());
-        System.out.println("Velocidad de c2" + c2.getVelocidad());
+        System.out.println("Velocidad actual de c2: " + c2.getVelocidad());
+        System.out.println("Velocidad cuando acelera de c2: " + c2.acelererar());
+        System.out.println("Velocidad cuando frena de c2: " + c2.frenar());
 
     }
 }
