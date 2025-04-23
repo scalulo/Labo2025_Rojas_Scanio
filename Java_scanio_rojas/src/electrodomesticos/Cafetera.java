@@ -1,4 +1,4 @@
-package Unidad1;
+package electrodomesticos;
 
 public class Cafetera {
     private int max;

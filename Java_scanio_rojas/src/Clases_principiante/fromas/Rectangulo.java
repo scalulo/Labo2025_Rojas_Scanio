@@ -1,4 +1,4 @@
-package Unidad1;
+package Clases_principiante.fromas;
 
 public class Rectangulo {
     private double base;
