@@ -1,4 +1,4 @@
-package Clases_principiante.fromas;
+package Clases_principiante.formas;
 
 public class Circulo {
     private int radio;

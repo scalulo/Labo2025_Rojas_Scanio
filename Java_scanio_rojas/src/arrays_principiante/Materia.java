@@ -61,7 +61,7 @@ public class Materia {
         int suma=0;
 
         for (Alumno alumno: this.getLista_alumnnos()){
-            int edad=alumno.getFecha().getAnio()-anioActual;
+            int edad=anioActual-alumno.getFecha().getAnio();
             suma+=edad;
         }
         return suma/(this.getLista_alumnnos().size());
@@ -91,6 +91,4 @@ public class Materia {
         System.out.println("Promedio de notas: " + lengua.promedioNotas());
 
     }
-
-
 }
