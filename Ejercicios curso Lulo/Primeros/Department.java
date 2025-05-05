@@ -1,4 +1,4 @@
-package EjerciciosCurso.HCM;
+package EjerciciosCurso.primeros;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ public class Department {
     private ArrayList <Employee> empleados;
 
     public Department(){
-        this.nombre = "robco";
+        this.nombre = "lulo";
         this.empleados = new ArrayList<>();
     }
 
