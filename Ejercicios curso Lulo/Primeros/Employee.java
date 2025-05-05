@@ -1,4 +1,5 @@
-package EjerciciosCurso.HCM;
+package EjerciciosCurso.primeros
+    ;
 
 public class Employee {
     private String nombre;
