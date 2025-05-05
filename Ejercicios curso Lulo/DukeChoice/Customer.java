@@ -3,50 +3,50 @@ package EjerciciosCurso.DukeChoice;
 import java.util.ArrayList;
 
 public class Customer {
-    private String name;
-    private String size;
+    private String nombre;
+    private String talle;
     private ArrayList <Clothing> items = new ArrayList<>();
 
-    public Customer(String name, String size) {
-        this.name = name;
-        this.size = size;
+    public Customer(String nombre, String talle) {
+        this.nombre = nombre;
+        this.talle = talle;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getSize() {
-        return size;
+    public String getTalle() {
+        return talle;
     }
 
-    public void setSize(String size) {
-        this.size = size;
+    public void settALLE(String talle) {
+        this.talle = talle;
     }
 
-    public void setSize(int measurement){
+    public void setTalle(int measurement){
         switch (measurement){
             case 1,2,3 :
-                setSize("S");
+                setTalle("S");
                 break;
             case 4,5,6 :
-                setSize("M");
+                setTalle("M");
                 break;
             case 7,8,9 :
-                setSize("L");
+                setTalle("L");
                 break;
             default:
-                setSize("X");
+                setTalle("X");
                 break;
         }
     }
 
-    public void addItems(ArrayList <Clothing> cositas){
-        this.items = cositas;
+    public void addItems(ArrayList <Clothing> cosas){
+        this.items = cosas;
     }
 
     public ArrayList <Clothing> returnArray(){
@@ -56,9 +56,9 @@ public class Customer {
     public double getTotalClothingCost(){
         double total = 0;
         for (Clothing ropa : items){
-            if (size.equals(ropa.getSize())){
-                total += ropa.getPrice();
-                System.out.println(ropa.getDescription() + ", " + ropa.getSize() + ", " + ropa.getPrice());
+            if (size.equals(ropa.getTalle())){
+                total += ropa.getPrecio();
+                System.out.println(ropa.getDescription() + ", " + ropa.getTalle() + ", " + ropa.getPrecio());
             }
             if (total > 15.0){break;}
         }
