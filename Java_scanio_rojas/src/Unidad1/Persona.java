@@ -7,7 +7,7 @@ public class Persona {
 
 public Persona(){
     this.nombre="Luciano";
-    this.edad=17;
+    this.edad=18;
     this.direccion="Griveo 3223";
 }
 public Persona(String nombre, int edad, String direccion){

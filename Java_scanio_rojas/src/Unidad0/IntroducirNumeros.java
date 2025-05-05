@@ -11,7 +11,7 @@ public class IntroducirNumeros {
 
        while(numerobase!=-1){
 
-           System.out.println("Ingrese numeros");
+           System.out.println("Ing  rese numeros");
            numerobase=entrada.nextInt();
             contador++;
         }
