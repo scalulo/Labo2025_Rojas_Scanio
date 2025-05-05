@@ -2,25 +2,25 @@
 package EjerciciosCurso.HCM;
 
 public class Empleado {
-    private String nombreEmpleado;
+    private String nombre;
     private String areaTrabajo;
 
-    public Empleado(String nombreEmpleado) {
-        this.nombreEmpleado = nombreEmpleado;
+    public Empleado(String nombre) {
+        this.nombreo = nombre;
         this.areaTrabajo = areaTrabajo;
     }
 
     public Empleado() {
-        this.nombreEmpleado = "Francisco";
+        this.nombreE = "Francisco";
         this.areaTrabajo = "RobCo";
     }
 
     public String obtenerNombre() {
-        return nombreEmpleado;
+        return nombre;
     }
 
     public void asignarNombre(String nombreEmpleado) {
-        this.nombreEmpleado = nombreEmpleado;
+        this.nombre = nombre;
     }
 
     public String obtenerAreaTrabajo() {
