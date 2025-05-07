@@ -1,4 +1,4 @@
-package Repaso_prueba;
+package Repaso_prueba.Ej1;
 
 import Unidad1.Persona;
 import java.util.ArrayList;

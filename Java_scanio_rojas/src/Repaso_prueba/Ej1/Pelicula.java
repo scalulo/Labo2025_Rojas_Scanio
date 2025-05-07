@@ -1,4 +1,4 @@
-package Repaso_prueba;
+package Repaso_prueba.Ej1;
 
 import Unidad1.Persona;
 
@@ -15,7 +15,7 @@ public class Pelicula {
 
     public Pelicula() {
         this.nombre = "Avengers";
-        this.genero = "Ficcion";
+        this.genero = "Ciencia-Ficcion";
         this.duracion = 60;
         this.actores = new ArrayList<>();
         Persona p1 = new Persona();

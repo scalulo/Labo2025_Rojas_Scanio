@@ -1,4 +1,4 @@
-package Repaso_prueba;
+package Repaso_prueba.Ej1;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,6 @@ public class Video_Club {
     private int cant_estanterias;
     private ArrayList<Estanteria> estanterias;
 
-
     public Video_Club(){
         this.direccion="albarellos 2324";
         this.codigo_postal=1419;
@@ -17,14 +16,16 @@ public class Video_Club {
         this.estanterias=new ArrayList<Estanteria>();
         this.comuna=12;
 
+
     }
 
-    public Video_Club(String direccion, int codigo_postal, int cant_estanterias, int comuna){
+    public Video_Club(String direccion, int codigo_postal, int cant_estanterias, int comuna, int total){
         this.direccion=direccion;
         this.codigo_postal=codigo_postal;
         this.cant_estanterias=cant_estanterias;
         this.estanterias=new ArrayList<Estanteria>();
         this.comuna=comuna;
+
 
     }
 
@@ -68,6 +69,8 @@ public class Video_Club {
         this.estanterias = estanterias;
     }
 
+
+
     public void agregarEstanteria(Estanteria estanteria){
         estanterias.add(estanteria);
     }
@@ -100,6 +103,21 @@ public class Video_Club {
         }
 
     }
+    public int pelis_total() {
+        int total = 0;
+
+        for (Estanteria e : getEstanterias()) {
+
+                total+=e.getPeliculas().size();
+
+
+
+            }
+        return total;
+        }
+
+
+
 
 
 
@@ -107,7 +125,8 @@ public class Video_Club {
         Sistema s1= new Sistema();
         Video_Club v1= new Video_Club();
         s1.getVideoclubs().add(v1);
-        Video_Club v2=new Video_Club("nazca 2432",2321,11,4);
+        Video_Club v2=new Video_Club("nazca 2432",2321,11,4,2);
+        s1.getVideoclubs().add(v2);
         Pelicula p1= new Pelicula();
         Estanteria e1= new Estanteria();
         Pelicula p2= new Pelicula("Terminator", "Ciencia-Ficcion", 120, 10);
@@ -122,5 +141,10 @@ public class Video_Club {
         e1.mostrarNombre(e1.directores_mas_d_una_peli());
         s1.comunal();
         v1.menor_90();
+        v1.pelis_total();
+        v2.pelis_total();
+        s1.comparar();
+        s1.total_segun_genero("Ciencia-Ficcion");
+
     }
 }
