@@ -1,9 +1,13 @@
 package Unidad1;
 
+import java.time.LocalDate;
+
 public class Coche {
     private String marca;
     private String modelo;
     private String color;
+    private int cant_ruedas;
+    private LocalDate fecha_fabricacion;
     private int velocidad;
 
     public Coche() {
@@ -13,11 +17,13 @@ public class Coche {
         this.velocidad=80;
     }
 
-    public Coche(String marca, String modelo, String color, int velocidad) {
+    public Coche(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.velocidad=velocidad;
+        this.cant_ruedas=cant_ruedas;
+        this.fecha_fabricacion=fecha_fabricacion;
     }
 
     public String getMarca() {
@@ -48,6 +54,22 @@ public class Coche {
     }
 
 
+    public LocalDate getFecha_fabricacion() {
+        return fecha_fabricacion;
+    }
+
+    public void setFecha_fabricacion(LocalDate fecha_fabricacion) {
+        this.fecha_fabricacion = fecha_fabricacion;
+    }
+
+    public int getCant_ruedas() {
+        return cant_ruedas;
+    }
+
+    public void setCant_ruedas(int cant_ruedas) {
+        this.cant_ruedas = cant_ruedas;
+    }
+
     public static void main(String[] args) {
         String marca = "Toyota";
         String modelo = "Hilux";
@@ -55,7 +77,6 @@ public class Coche {
         int velocidad=90;
 
         Coche c1 = new Coche();
-        Coche c2 = new Coche(marca, modelo, color,velocidad);
 
         System.out.println("Marca de c1: " + c1.getMarca());
         System.out.println("Modelo de c1: " + c1.getModelo());
@@ -65,12 +86,6 @@ public class Coche {
         System.out.println("Velocidad cuando frena de c1: " + c1.frenar());
 
 
-        System.out.println("Marca de c2: " + c2.getMarca());
-        System.out.println("Modelo de c2: " + c2.getModelo());
-        System.out.println("Marca de c2: " + c2.getColor());
-        System.out.println("Velocidad actual de c2: " + c2.getVelocidad());
-        System.out.println("Velocidad cuando acelera de c2: " + c2.acelererar());
-        System.out.println("Velocidad cuando frena de c2: " + c2.frenar());
 
     }
 }
