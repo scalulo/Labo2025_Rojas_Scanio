@@ -40,7 +40,10 @@ public void agregar_partidos(ArrayList<Equipo> turno){
                 partidos.add(partido);
             }
         }
+}
 
+public int cant_equipos(){
+        return equipos.size();
 }
 
     public void agregarEquipo(Equipo equipo) {

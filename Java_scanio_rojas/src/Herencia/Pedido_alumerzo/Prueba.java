@@ -1,2 +1,4 @@
-package Herencia.Pedido_alumerzo;public class Prueba {
+package Herencia.Pedido_alumerzo;
+
+public class Prueba {
 }

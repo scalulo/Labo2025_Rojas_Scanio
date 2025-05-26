@@ -1,4 +1,6 @@
-package Herencia.Flota_vehiculos;
+package Herencia.Flota_vehiculos.Vehiculos;
+
+import java.time.LocalDate;
 
 public class Auto extends Auto_camioneta{
     private boolean descapotable;
@@ -6,7 +8,8 @@ public class Auto extends Auto_camioneta{
 public Auto(){
     this.descapotable=true;
 }
-public Auto(boolean descapotable){
+public Auto(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion, boolean descapotable){
+    super();
     this.descapotable=descapotable;
 }
 

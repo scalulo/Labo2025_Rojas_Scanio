@@ -1,6 +1,6 @@
 package Clases_principiante.formas;
 
-public class Rectangulo {
+public class Rectangulo  {
     private double base;
     private double altura;
 

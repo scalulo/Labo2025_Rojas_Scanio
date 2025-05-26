@@ -1,8 +1,6 @@
-package Herencia.Flota_vehiculos;
+package Herencia.Flota_vehiculos.Vehiculos;
 
 import Unidad1.Vehiculo;
-
-import java.time.LocalDate;
 
 public class Auto_camioneta extends Vehiculo {
     private String patente;

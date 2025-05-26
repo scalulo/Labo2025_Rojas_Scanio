@@ -2,7 +2,7 @@ package Unidad1;
 
 import java.time.LocalDate;
 
-public class Coche {
+public class Vehiculo {
     private String marca;
     private String modelo;
     private String color;
@@ -10,14 +10,14 @@ public class Coche {
     private LocalDate fecha_fabricacion;
     private int velocidad;
 
-    public Coche() {
+    public Vehiculo() {
         this.marca = "Peugeot";
         this.modelo = "GTI";
         this.color = "Blanco";
         this.velocidad=80;
     }
 
-    public Coche(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion) {
+    public Vehiculo(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -76,7 +76,7 @@ public class Coche {
         String color = "Negro";
         int velocidad=90;
 
-        Coche c1 = new Coche();
+        Vehiculo c1 = new Vehiculo();
 
         System.out.println("Marca de c1: " + c1.getMarca());
         System.out.println("Modelo de c1: " + c1.getModelo());

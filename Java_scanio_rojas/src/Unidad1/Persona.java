@@ -4,16 +4,22 @@ public class Persona {
     private String nombre;
     private int edad;
     private String direccion;
+    private String apellido;
 
 public Persona(){
     this.nombre="Luciano";
     this.edad=18;
     this.direccion="Griveo 3223";
 }
+
 public Persona(String nombre, int edad, String direccion){
     this.nombre = nombre;
     this.edad = edad;
     this.direccion = direccion;
+}
+public Persona(String nombre, String apellido){
+    this.nombre=nombre;
+    this.apellido=apellido;
 }
 
     public String getNombre() {
