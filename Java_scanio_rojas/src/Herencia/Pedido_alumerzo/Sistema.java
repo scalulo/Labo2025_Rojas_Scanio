@@ -40,7 +40,7 @@
             platos.add(p);
         }
 
-        public void modificarPlato(String nombre, double nuevoPrecio) {
+        public void modificarPlato(String nombre, int nuevoPrecio) {
             for (Plato p : platos) {
                 if (p.getNombre().equalsIgnoreCase(nombre)) {
                     p.setPrecio(nuevoPrecio);
@@ -101,22 +101,34 @@
 
 
         public static void main(String[] args) {
+            int aux=100;
+
             Plato plato1 = new Plato("Milanesa", 500, 0);
             Plato plato2 = new Plato("Ensalada", 300,  0);
             Plato plato3 = new Plato();
 
 
+            ArrayList<Plato> platos=new ArrayList<>();
+            ArrayList<Pedido> pedidos=new ArrayList<>();
+
             Profesor profe1 = new Profesor();
             Alumno alumno1 = new Alumno("Lulo", "Rojas", "2a");
 
-            Pedido pedido2=new Pedido(LocalDate.now(), LocalTime.now(), "Pendiente", ArrayList<Plato> platos, alumno1);
+            Pedido pedido2=new Pedido(LocalDate.now(), LocalTime.now(), "Pendiente", platos, alumno1);
             Pedido pedido1=new Pedido();
-            Pedido pedido3=new Pedido(LocalDate.now(), LocalTime.now(), "Cancelado", ArrayList<Plato> platos, profe1);
+            Pedido pedido3=new Pedido(LocalDate.now(), LocalTime.now(), "Cancelado", platos, profe1);
 
             Sistema sistema = new Sistema();
+            sistema.agregarPlato(plato1);
+            sistema.agregarPlato(plato2);
+
+            sistema.eliminarPlato(plato1.getNombre());
+
+            sistema.modificarPlato(plato2.getNombre(), aux);
             sistema.registrarPedidos(pedido2, plato1);
             sistema.registrarPedidos(pedido1, plato2);
             sistema.registrarPedidos(pedido1,plato3);
+
             sistema.top();
             System.out.println(sistema.listado());
 
