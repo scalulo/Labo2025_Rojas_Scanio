@@ -49,7 +49,7 @@ public class Sistema {
         this.compras = compras;
     }
 
-    public void calcularTotalCompra(Compra compra) {
+    public int calcularTotalCompra(Compra compra) {
         int total = 0;
 
         for (Componente comp : compra.getCpu().getComponentes()) {
@@ -65,6 +65,7 @@ public class Sistema {
         }
         System.out.println("El total de tu compra es: "+total);
         compra.setTotal(total);
+        return total;
     }
 
 

@@ -56,6 +56,10 @@ public class Dispositivo {
     public void setAnio(int anio) {
         this.anio = anio;
     }
+
+    public void comparar(){
+
+    }
 }
 
 
