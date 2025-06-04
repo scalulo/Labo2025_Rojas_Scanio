@@ -1,5 +1,7 @@
 package Unidad1;
 
+import Unidad1.Enums.Editorial;
+
 import java.time.LocalDate;
 
 public class Libro {
@@ -7,7 +9,7 @@ public class Libro {
     private Persona autor;
     private int isbn;
     private int paginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fecha;
 
     public Libro() {
@@ -15,7 +17,7 @@ public class Libro {
         this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
-        this.editorial = "pepo";
+        this.editorial =  Editorial.SUDAMERICA  ;
         this.fecha = new Fecha();
     }
     public Libro(String titulo1){
@@ -23,10 +25,10 @@ public class Libro {
         this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
-        this.editorial = "pepo";
+        this.editorial = Editorial.ALIANZA;
         this.fecha = new Fecha();
     }
-    public Libro (String titulo,Persona autor,int isbn,int paginas,String editorial,Fecha fecha){
+    public Libro (String titulo, Persona autor, int isbn, int paginas, Editorial editorial, Fecha fecha){
         this.titulo=titulo;
         this.autor=autor;
         this.isbn=isbn;
@@ -51,7 +53,7 @@ public class Libro {
         return paginas;
     }
 
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
     }
 
@@ -67,7 +69,7 @@ public class Libro {
         this.paginas = paginas;
     }
 
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
 
@@ -101,7 +103,7 @@ public class Libro {
         Persona autor=new Persona();
         int isbn = 2453;
         int paginas=213;
-        String editorial="manu";
+        Editorial editorial= Editorial.KAPELUSZ;
         Fecha fecha= new Fecha(4, 6, 2022);
 
         Libro l1= new Libro();

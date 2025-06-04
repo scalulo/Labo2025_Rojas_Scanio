@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Pedido {
     private LocalDate creacion;
     private LocalTime entrega;
-    private String estado;
+    private Estado_plato estado;
     private ArrayList<Plato> platos;
     private Persona Solicitante;
 
@@ -17,11 +17,11 @@ public class Pedido {
     public Pedido(){
         this.creacion = LocalDate.of(2025,10,12);
         this.entrega = LocalTime.from(LocalDate.of(2025,10,15));
-        this.estado = "Entregado";
+        this.estado = Estado_plato.PENDIENTE;
         this.platos = platos;
         Solicitante = new Persona();
     }
-    public Pedido(LocalDate creacion, LocalTime entrega, String estado, ArrayList<Plato> platos, Persona solicitante) {
+    public Pedido(LocalDate creacion, LocalTime entrega, Estado_plato estado, ArrayList<Plato> platos, Persona solicitante) {
         this.creacion = creacion;
         this.entrega = entrega;
         this.estado = estado;
@@ -45,11 +45,11 @@ public class Pedido {
         this.entrega = entrega;
     }
 
-    public String getEstado() {
+    public Estado_plato getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Estado_plato estado) {
         this.estado = estado;
     }
 

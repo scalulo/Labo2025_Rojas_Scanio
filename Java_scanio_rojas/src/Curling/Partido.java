@@ -6,7 +6,7 @@ import java.time.LocalDate;
         private Equipo equipo1;
         private Equipo equipo2;
         private LocalDate fecha;
-        private String turno; // mañana, tarde, noche
+        private Disponibilidad turno; // mañana, tarde, noche
 
         public Equipo getEquipo1() {
             return equipo1;
@@ -32,15 +32,15 @@ import java.time.LocalDate;
             this.fecha = fecha;
         }
 
-        public String getTurno() {
+        public Disponibilidad getTurno() {
             return turno;
         }
 
-        public void setTurno(String turno) {
+        public void setTurno(Disponibilidad turno) {
             this.turno = turno;
         }
 
-        public Partido(Equipo equipo1, Equipo equipo2, LocalDate fecha, String turno) {
+        public Partido(Equipo equipo1, Equipo equipo2, LocalDate fecha, Disponibilidad turno) {
             this.equipo1 = equipo1;
             this.equipo2 = equipo2;
             this.fecha = fecha;

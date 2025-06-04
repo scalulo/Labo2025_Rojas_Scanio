@@ -1,5 +1,7 @@
 package Herencia.Flota_vehiculos.Vehiculos;
 
+import Unidad1.Enums.Cant_ruedas;
+
 import java.time.LocalDate;
 
 public class Auto extends Auto_camioneta{
@@ -8,7 +10,7 @@ public class Auto extends Auto_camioneta{
 public Auto(){
     this.descapotable=true;
 }
-public Auto(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion, boolean descapotable){
+public Auto(String marca, String modelo, String color, int velocidad, Cant_ruedas cant_ruedas, LocalDate fecha_fabricacion, boolean descapotable){
     super();
     this.descapotable=descapotable;
 }

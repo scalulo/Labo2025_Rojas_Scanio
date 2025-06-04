@@ -114,9 +114,9 @@
             Profesor profe1 = new Profesor();
             Alumno alumno1 = new Alumno("Lulo", "Rojas", "2a");
 
-            Pedido pedido2=new Pedido(LocalDate.now(), LocalTime.now(), "Pendiente", platos, alumno1);
+            Pedido pedido2=new Pedido(LocalDate.now(), LocalTime.now(), Estado_plato.CANCELADO, platos, alumno1);
             Pedido pedido1=new Pedido();
-            Pedido pedido3=new Pedido(LocalDate.now(), LocalTime.now(), "Cancelado", platos, profe1);
+            Pedido pedido3=new Pedido(LocalDate.now(), LocalTime.now(), Estado_plato.PENDIENTE, platos, profe1);
 
             Sistema sistema = new Sistema();
             sistema.agregarPlato(plato1);

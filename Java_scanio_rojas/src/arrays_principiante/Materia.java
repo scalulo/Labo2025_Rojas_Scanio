@@ -6,12 +6,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Materia {
-    private String nombre;
+    private Materia_name nombre;
     private ArrayList<String> contenidos;
     private ArrayList<Alumno> lista_alumnnos;
 
     public Materia(){
-        this.nombre="lengua";
+        this.nombre=Materia_name.COMPUTACION;
         lista_alumnnos=new ArrayList<>();
         contenidos=new ArrayList<>();
         contenidos.add("analisis sintactico");
@@ -25,17 +25,17 @@ public class Materia {
         lista_alumnnos.add(new Alumno("lautaro","scanio",new Fecha(4,8,2007),notas));
     }
 
-    public Materia(String nombre, ArrayList<String> contenidos, ArrayList<Alumno> lista_alumnnos) {
+    public Materia(Materia_name nombre, ArrayList<String> contenidos, ArrayList<Alumno> lista_alumnnos) {
         this.nombre = nombre;
         this.contenidos = contenidos;
         this.lista_alumnnos = lista_alumnnos;
     }
 
-    public String getNombre() {
+    public Materia_name getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(Materia_name nombre) {
         this.nombre = nombre;
     }
 

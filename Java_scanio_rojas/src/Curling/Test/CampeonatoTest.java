@@ -1,6 +1,7 @@
 package Curling.Test;
 
 import Curling.Campeonato;
+import Curling.Disponibilidad;
 import Curling.Equipo;
 import org.junit.jupiter.api.*; // Incluye Test, BeforeEach, etc.
 import static org.junit.jupiter.api.Assertions.*; // Incluye assertEquals, assertTrue, etc.
@@ -12,7 +13,7 @@ public class CampeonatoTest {
     @BeforeEach
     public void setUp() {
         e1 = new Equipo();
-        e2 = new Equipo("alem", "Leandro alem", "mañana");
+        e2 = new Equipo("alem", "Leandro alem", Disponibilidad.MAÑANA);
         c1 = new Campeonato();
     }
 

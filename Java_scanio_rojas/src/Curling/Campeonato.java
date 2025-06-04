@@ -1,5 +1,4 @@
 package Curling;
-import Curling.Partido;
 import Unidad1.Fecha;
 
 import java.time.LocalDate;
@@ -65,7 +64,7 @@ public void fixture(){
 
     public static void main(String[] args) {
         Equipo e1 = new Equipo();
-        Equipo e2 = new Equipo("Velez", "Liniers", "mañana");
+        Equipo e2 = new Equipo("Velez", "Liniers", Disponibilidad.MAÑANA);
 
 
         e1.agregar(new Jugador("Juan Pérez", new Fecha(10, 5, 2005), 7, true));

@@ -35,6 +35,10 @@ public class Sistema {
         for (Llamada llam : llamadas) {
             if (llam.getOrigen() == emp || llam.getDestino() == emp) {
                 emp.getLlamadas_emp().add(llam);
+                System.out.println("nombre origen: " +llam.getOrigen().getNombre());
+                System.out.println("nombre destino: " +llam.getDestino().getNombre());
+                System.out.println("hora inicio: " +llam.getHora_inicio());
+                System.out.println("hora fin: " +llam.getHora_fin());
             }
         }
     }
@@ -80,8 +84,7 @@ public class Sistema {
         Empleado e2=new Empleado("negu","la jumpa",243244,1532422,"Argentina");
         Empleado e3=new Empleado("luca","la jumpa",243244,1532422,"Brasil");
         Llamada l1=new Llamada();
-        Llamada l2=new Llamada(e2
-                ,e3, LocalTime.of(4,5,2),LocalTime.of(4,5,40),LocalDate.of(2025,4,2));
+        Llamada l2=new Llamada(e2,e3, LocalTime.of(4,5,2),LocalTime.of(4,5,40),LocalDate.of(2025,4,2));
         Llamada l3=new Llamada(e1,e3, LocalTime.of(14,5,2),LocalTime.of(15,5,40),LocalDate.of(2025,4,2));
         s1.getEmpleados().add(e1);
         s1.getEmpleados().add(e2);

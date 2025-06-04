@@ -1,23 +1,26 @@
 package Unidad1;
 
+import Unidad1.Enums.Cant_ruedas;
+import Unidad1.Enums.Color;
+
 import java.time.LocalDate;
 
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private String color;
-    private int cant_ruedas;
+    private Color color;
+    private Cant_ruedas cant_ruedas;
     private LocalDate fecha_fabricacion;
     private int velocidad;
 
     public Vehiculo() {
         this.marca = "Peugeot";
         this.modelo = "GTI";
-        this.color = "Blanco";
+        this.color = Color.ROJO;
         this.velocidad=80;
     }
 
-    public Vehiculo(String marca, String modelo, String color, int velocidad, int cant_ruedas, LocalDate fecha_fabricacion) {
+    public Vehiculo(String marca, String modelo, Color color, int velocidad, Cant_ruedas cant_ruedas, LocalDate fecha_fabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -32,7 +35,7 @@ public class Vehiculo {
     public String getModelo() {
         return modelo;
     }
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     public int getVelocidad() {
@@ -62,18 +65,18 @@ public class Vehiculo {
         this.fecha_fabricacion = fecha_fabricacion;
     }
 
-    public int getCant_ruedas() {
+    public Cant_ruedas getCant_ruedas() {
         return cant_ruedas;
     }
 
-    public void setCant_ruedas(int cant_ruedas) {
+    public void setCant_ruedas(Cant_ruedas cant_ruedas) {
         this.cant_ruedas = cant_ruedas;
     }
 
     public static void main(String[] args) {
         String marca = "Toyota";
         String modelo = "Hilux";
-        String color = "Negro";
+        Color color = Color.AZUL;
         int velocidad=90;
 
         Vehiculo c1 = new Vehiculo();
