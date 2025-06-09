@@ -5,6 +5,7 @@ public class Producto {
     private int precio;
     private int stock;
 
+
     public Producto(){
         this.nombre="Iphone 16 prox max";
         this.precio=1100;

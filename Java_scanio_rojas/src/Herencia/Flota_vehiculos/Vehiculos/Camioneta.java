@@ -7,13 +7,14 @@ import java.time.LocalDate;
 public class Camioneta extends Auto_camioneta{
     private int capacidad_carga_en_kg;
     private int carga_en_kg;
+    static Cant_ruedas cant_ruedas=Cant_ruedas.CUATRO;
 
 public Camioneta(){
     this.capacidad_carga_en_kg=500;
     this.carga_en_kg=200;
 }
 
-    public Camioneta(String marca, String modelo, String color, int velocidad, Cant_ruedas cant_ruedas, LocalDate fecha_fabricacion, int capacidad_carga_en_kg, int carga_en_kg) {
+    public Camioneta(String marca, String modelo, String color, int velocidad, LocalDate fecha_fabricacion, int capacidad_carga_en_kg, int carga_en_kg) {
     super();
     this.capacidad_carga_en_kg = capacidad_carga_en_kg;
     this.carga_en_kg=carga_en_kg;
@@ -47,7 +48,7 @@ public Camioneta(){
         return;
     }
         public static void main(String[] args) {
-        Camioneta c1=new Camioneta("Volkswagen","Amarok","blanca",250,Cant_ruedas.CUATRO, LocalDate.now(),500,200);
+        Camioneta c1=new Camioneta("Volkswagen","Amarok","blanca",250, LocalDate.now(),500,200);
         c1.sumar_peso(200);
 }
 }

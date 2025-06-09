@@ -5,6 +5,7 @@ import Tienda_electronica.Producto;
 public class Cargador extends Producto {
     private String tipo_conector;
     private double Amperaje;
+    static Categoria categoria=Categoria.CARGARODES;
 
     public Cargador(String nombre, int precio, int stock, String tipo_conector, double amperaje) {
         super(nombre, precio, stock);

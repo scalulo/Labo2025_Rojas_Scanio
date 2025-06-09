@@ -4,6 +4,7 @@ import Tienda_electronica.Producto;
 
 public class Television extends Producto {
     private Calidad calidad;
+    static Categoria categoria=Categoria.MULTIMEDIA;
 
     public Television(String nombre, int precio, int stock, Calidad calidad) {
         super(nombre, precio, stock);
