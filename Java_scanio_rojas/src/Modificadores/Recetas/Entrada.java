@@ -42,5 +42,15 @@ public class Entrada extends Receta {
             }
         }
     }
+
+    public boolean sosEntrada() {
+        return true;
+    }
+
+    @Override
+    boolean esDelTipo(Receta r) {
+        return r.sosEntrada();
+    }
 }
+
 
