@@ -81,8 +81,8 @@ public class Sistema {
     public static void main(String[] args) {
         Sistema s1=new Sistema();
         Empleado e1=new Empleado();
-        Empleado e2=new Empleado("negu","la jumpa",243244,1532422,"Argentina");
-        Empleado e3=new Empleado("luca","la jumpa",243244,1532422,"Brasil");
+        Empleado e2=new Empleado("pepo",3,"cuecna","de",4646435,123455,"Argentina",new ArrayList<>());
+        Empleado e3=new Empleado("luca",3,"cunca","la jumpa",243244,1532422,"Brasil",new ArrayList<>());
         Llamada l1=new Llamada();
         Llamada l2=new Llamada(e2,e3, LocalTime.of(4,5,2),LocalTime.of(4,5,40),LocalDate.of(2025,4,2));
         Llamada l3=new Llamada(e1,e3, LocalTime.of(14,5,2),LocalTime.of(15,5,40),LocalDate.of(2025,4,2));

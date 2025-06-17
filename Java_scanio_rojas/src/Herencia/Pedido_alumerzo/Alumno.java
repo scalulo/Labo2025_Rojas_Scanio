@@ -9,9 +9,10 @@ public class Alumno extends Persona {
         super();
         this.division="5A";
     }
-    public Alumno(String nombre, String apellido, String division){
-        super(nombre,apellido);
-        this.division=division;
+
+    public Alumno(String nombre, int edad, String direccion, String apellido, String division) {
+        super(nombre, edad, direccion, apellido);
+        this.division = division;
     }
 
     public String getDivision() {

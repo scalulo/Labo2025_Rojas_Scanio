@@ -52,7 +52,6 @@ public class Sistema {
 
         sistema1.agregarSensores(sensorTemperatura1);
 
-        sistema1.compuesto();
         sistema1.alarma();
 
 

@@ -3,6 +3,7 @@ package Herencia.Flota_vehiculos;
 import Herencia.Flota_vehiculos.Vehiculos.Auto;
 import Herencia.Flota_vehiculos.Vehiculos.Camioneta;
 import Unidad1.Enums.Cant_ruedas;
+import Unidad1.Enums.Color;
 import Unidad1.Vehiculo;
 
 import java.time.LocalDate;
@@ -63,9 +64,9 @@ public Empresa()
 
     public static void main(String[] args) {
         Empresa e1=new Empresa();
-        Camioneta c1=new Camioneta("Volkswagen","Amarok","blanca",250,Cant_ruedas.CUATRO, LocalDate.now(),300,100);
+        Camioneta c1=new Camioneta("Volkswagen","Amarok", Color.ROJO,250,Cant_ruedas.CUATRO, LocalDate.now(),"fji 344",100,0);
         e1.getVehiculos().add(c1);
-        Auto a1=new Auto("Chevrolet", "Astra", "azul", 200, Cant_ruedas.CUATRO,LocalDate.of(2007,3,5),false);
+        Auto a1=new Auto("Chevrolet", "Astra", Color.AZUL, 200, Cant_ruedas.CUATRO,LocalDate.of(2007,3,5),"fji 344",false);
         e1.getVehiculos().add(a1);
         e1.mayor_cantidad();
         e1.porcentaje();

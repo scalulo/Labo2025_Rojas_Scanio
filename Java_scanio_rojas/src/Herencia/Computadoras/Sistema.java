@@ -97,7 +97,7 @@ public class Sistema {
 
     public static void main(String[] args) {
         Sistema s1= new Sistema();
-        Cliente cliente1= new Cliente() ;
+        Cliente cliente1= new Cliente("pepo",2,"de santis","de santis",1223444) ;
         Componente procesador1=new Componente("Procesador","AMD","5ta generacion",300000,23);
         Componente ram1=new Componente("Memoria Ram","AMD","16gb",100000,15);
         Componente grafica1=new Componente("tarjeta grafica","Razen","pepo",1000000,10);

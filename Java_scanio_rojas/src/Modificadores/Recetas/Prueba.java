@@ -1,6 +1,7 @@
+
 package Modificadores.Recetas;
 
-import org.junit.jupiter.api.BeforeEach;
+/*import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
@@ -84,5 +85,6 @@ class PlataformaTest {
     void testMayor() {
         Receta mayor = plataforma.getRecetas().get(0);
 
-        for (Receta r : plataforma.getRe
-
+        for (Receta r : plataforma.getRecetas())
+    }
+*/

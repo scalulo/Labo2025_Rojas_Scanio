@@ -1,48 +1,34 @@
 package Herencia.Llamadas;
 
+import Unidad1.Persona;
+
 import java.util.ArrayList;
 
-public class Empleado {
-    private String nombre;
-    private String apellido;
+public class Empleado extends Persona {
+
     private int DNI;
     private int telefono;
     private String pais;
     private ArrayList<Llamada> llamadas_emp;
 
 public Empleado(){
-    this.nombre = "pepo";
-    this.apellido ="de santis";
+    super("pepo",2,"dde","de santis");
     this.DNI = 234445553;
     this.telefono = 18373488;
     this.pais = "Argentina";
     this.llamadas_emp=new ArrayList<>();
 }
 
-    public Empleado(String nombre, String apellido, int DNI, int telefono, String pais) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public Empleado(String nombre, int edad, String direccion, String apellido, int DNI, int telefono, String pais, ArrayList<Llamada> llamadas_emp) {
+        super(nombre, edad, direccion, apellido);
         this.DNI = DNI;
         this.telefono = telefono;
         this.pais = pais;
-        this.llamadas_emp=new ArrayList<>();
+        this.llamadas_emp = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public int getDNI() {
         return DNI;
