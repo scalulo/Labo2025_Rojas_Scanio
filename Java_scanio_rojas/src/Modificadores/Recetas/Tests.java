@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Tests {
     Dificultad dificultad;
     ArrayList<Receta> recetas;
+    Principal principal1;
+    Postre postre1;
 
     @BeforeEach
     public void setUp() {
@@ -16,10 +18,13 @@ public class Tests {
         Entrada entrada1=new Entrada("Rabas", Dificultad.MEDIO, new ArrayList<String>(),Temperatura.CALIENTE);
         dificultad=Dificultad.DIFICIL;
         Plataforma plataforma1=new Plataforma();
+        ArrayList<Receta> dificiles=new ArrayList<>();
+        dificiles.add(postre1);
     }
     @Test
     public void buscar(){
-        assertEquals();
+
+        assertEquals(dificiles, );
     }
     }
 
