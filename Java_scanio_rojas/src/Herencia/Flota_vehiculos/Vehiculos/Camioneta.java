@@ -21,6 +21,9 @@ public Camioneta(){
 
     }
 
+    public Camioneta(String volkswagen, String amarok, String blanca, int i, Cant_ruedas cantRuedas, LocalDate now, int i1, int i2) {
+    }
+
     public int getCarga_en_kg() {
         return carga_en_kg;
     }

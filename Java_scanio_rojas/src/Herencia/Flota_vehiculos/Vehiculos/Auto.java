@@ -17,6 +17,9 @@ public Auto(String marca, String modelo, String color, int velocidad, LocalDate 
 
 }
 
+    public Auto(String chevrolet, String astra, String azul, int i, Cant_ruedas cantRuedas, LocalDate of, boolean b) {
+    }
+
     public boolean isDescapotable() {
         return descapotable;
     }
