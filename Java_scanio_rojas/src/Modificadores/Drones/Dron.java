@@ -10,6 +10,7 @@ public abstract class Dron {
      Estado estado;
 
 
+
     public Dron(String nombre, LocalDate fecha_adquisicion, int nivel_carga, int nro, Estado estado) {
         this.nombre = nombre;
         this.fecha_adquisicion = fecha_adquisicion;
@@ -68,6 +69,19 @@ public abstract class Dron {
             setNivel_carga(nivel_carga+10);
         }
     }
+
+    public boolean rastrear(){
+        if(estado.equals(Estado.EN_OPERATIVA) || estado.equals(Estado.VUELO)){
+            System.out.println("Es rastreable");
+            return true;
+        }
+        else{
+            System.out.println("No es rastreable");
+            return false;
+        }
+    }
+
+
     abstract void chequear_mision(double latitud_destino,double longitud_destino);
 
 

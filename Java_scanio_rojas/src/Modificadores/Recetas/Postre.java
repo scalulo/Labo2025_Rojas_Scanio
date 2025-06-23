@@ -40,4 +40,14 @@ public class Postre extends Receta {
                 n++;
         }
     }
+
+    public boolean sosPostre() {
+        return true;
+    }
+
+    @Override
+    boolean esDelTipo(Receta r) {
+        return r.sosPostre();
+    }
 }
+

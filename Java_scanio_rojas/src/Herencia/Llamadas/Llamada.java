@@ -3,6 +3,7 @@ package Herencia.Llamadas;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Llamada {
     private Empleado origen;
@@ -13,7 +14,7 @@ public class Llamada {
 
     public Llamada(){
         this.origen= new Empleado();
-        this.destino= new Empleado("negu","nashe",2412421,12234,"Brasil");
+        this.destino= new Empleado("luca",3,"cunca","la jumpa",243244,1532422,"Brasil",new ArrayList<>());
         this.hora_inicio = LocalTime.of(14,23,22);
         this.hora_fin = LocalTime.of(14,24,53);
         this.fecha=LocalDate.of(2024,3,31);

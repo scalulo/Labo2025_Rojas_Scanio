@@ -18,8 +18,6 @@ public class Pelicula {
         this.genero = "Ciencia-Ficcion";
         this.duracion = 60;
         this.actores = new ArrayList<>();
-        Persona p1 = new Persona();
-        actores.add(p1);
         this.directores = new ArrayList<>();
         this.idiomas = 3;
 

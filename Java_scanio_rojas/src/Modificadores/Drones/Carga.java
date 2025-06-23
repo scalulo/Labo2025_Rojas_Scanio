@@ -20,25 +20,26 @@ public class Carga extends Dron{
 
     @Override
     void chequear_mision(double latitud_destino,double longitud_destino) {
-        if(getEstado().equals(Estado.INACTIVO) || getEstado().equals(Estado.MANTENIMIENTO) ){
-            System.out.println("El dron esta inactivo o en mantenimiento");
-            return;
-        }
+        if(estado.equals(Estado.EN_OPERATIVA) || estado.equals(Estado.VUELO)) {
 
-        double distancia=Convertir(latitud_destino,longitud_destino);
-        System.out.println("La distancia es "+distancia);
-         if(distancia<=30){
-            if(getNivel_carga()<48 ){
-                System.out.println("La mision no sera exitosa porque la bateria no es la suficiente");
-            }
-            else{
-                System.out.println("Mision en curso");
-                setNivel_carga(getNivel_carga()-48);
+
+            double distancia = Convertir(latitud_destino, longitud_destino);
+            System.out.println("La distancia es " + distancia);
+            if (distancia <= 30) {
+                if (getNivel_carga() < 50) {
+                    System.out.println("La mision no sera exitosa porque la bateria no es la suficiente");
+                } else {
+                    System.out.println("Mision en curso");
+                    setNivel_carga(getNivel_carga() - 50);
+
+                }
+            } else {
+                System.out.println("La mision no sera exitosa porque la longitud es mayor a 30km");
 
             }
         }
-        else {
-            System.out.println("La mision no sera exitosa porque la longitud es mayor a 30km");
+        else{
+            System.out.println("no se puede realizar la mision porque el dron se encuentra en "+ estado.toString());
 
         }
     }

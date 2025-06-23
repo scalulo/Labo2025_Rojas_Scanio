@@ -4,7 +4,7 @@ import Unidad1.Fecha;
 
 import java.time.LocalDate;
 
-public class Dispositivo {
+public abstract class Dispositivo {
     private String estado;
     private double medida;
     private double inicial;
@@ -57,9 +57,7 @@ public class Dispositivo {
         this.anio = anio;
     }
 
-    public void comparar(){
-
-    }
+    abstract void comparar();
 }
 
 

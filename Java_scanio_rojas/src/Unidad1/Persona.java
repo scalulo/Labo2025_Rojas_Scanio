@@ -1,6 +1,6 @@
 package Unidad1;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private int edad;
     private String direccion;
@@ -12,15 +12,12 @@ public Persona(){
     this.direccion="Griveo 3223";
 }
 
-public Persona(String nombre, int edad, String direccion){
-    this.nombre = nombre;
-    this.edad = edad;
-    this.direccion = direccion;
-}
-public Persona(String nombre, String apellido){
-    this.nombre=nombre;
-    this.apellido=apellido;
-}
+    public Persona(String nombre, int edad, String direccion, String apellido) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.direccion = direccion;
+        this.apellido = apellido;
+    }
 
     public String getNombre() {
     return nombre;
@@ -53,8 +50,6 @@ public Persona(String nombre, String apellido){
         String nombre="luca";
         int edad=24;
         String direccion="Griveo 3223";
-        Persona p1= new Persona();
-        Persona p2=  new Persona(nombre, edad, direccion);
-        p2.mostrar();
+
     }
 }

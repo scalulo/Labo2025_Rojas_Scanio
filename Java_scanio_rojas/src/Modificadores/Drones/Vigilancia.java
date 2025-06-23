@@ -20,22 +20,25 @@ public class Vigilancia extends Dron {
 
     @Override
     void chequear_mision(double latitud_destino, double longitud_destino) {
-        double distancia=Convertir(latitud_destino,longitud_destino);
-        System.out.println("La distancia es "+distancia);
+        if(estado.equals(Estado.EN_OPERATIVA) || estado.equals(Estado.VUELO)) {
+            double distancia = Convertir(latitud_destino, longitud_destino);
+            System.out.println("La distancia es " + distancia);
 
-        if(getEstado().equals(Estado.INACTIVO) || getEstado().equals(Estado.MANTENIMIENTO) ){
-            System.out.println("El dron esta inactivo o en mantenimiento");
-            return;
+            if (getEstado().equals(Estado.INACTIVO) || getEstado().equals(Estado.MANTENIMIENTO)) {
+                System.out.println("El dron esta inactivo o en mantenimiento");
+                return;
+            }
+            int cantidad_memoria_a_usar = ((int) distancia / 2) * 12;
+            System.out.println("se necesita " + cantidad_memoria_a_usar + "mb de memoria y tenemos " + memoria + "gb");
+            if (cantidad_memoria_a_usar <= memoria) {
+                System.out.println("Mision en curso");
+                setMemoria(memoria - cantidad_memoria_a_usar);
+            } else {
+                System.out.println("no hay tanta memoria disponible");
+            }
         }
-        int cantidad_memoria_a_usar= ((int)distancia/2)*12;
-        System.out.println("se necesita "+cantidad_memoria_a_usar+"mb de memoria y tenemos " + memoria +"gb");
-        if (cantidad_memoria_a_usar<=memoria){
-            System.out.println("Mision en curso");
-            setMemoria(memoria-cantidad_memoria_a_usar);
-        }
-
         else {
-            System.out.println("no hay tanta memoria disponible");
+            System.out.println("no se puede realizar la mision porque el dron se encuentra en "+ estado.toString());
         }
     }
 

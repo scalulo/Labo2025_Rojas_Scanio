@@ -21,7 +21,6 @@ public class Test_computadoras {
         s1=new Sistema();
         ds1=new Dispositivo_salida("monitor",4,23333,3);
         de1=new Dispositivo_entrada("Teclado","c",1,43343,23);
-        cl1=new Cliente();
         comp1=new Componente("Memoria Ram","AMD","16gb",100000,15);
         comp2=new Componente("tarjeta grafica","Razen","pepo",1000000,10);
         compra1=new Compra(p1,c1,p1.getCliente(),0);

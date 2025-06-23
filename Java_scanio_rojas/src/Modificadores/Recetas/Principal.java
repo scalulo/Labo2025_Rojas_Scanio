@@ -50,4 +50,16 @@ public class Principal extends Receta {
          */
 
     }
+
+
+
+    @Override
+    public boolean sosPrincipal() {
+        return true;
+    }
+
+    @Override
+    boolean esDelTipo(Receta r) {
+        return r.sosPrincipal();
+    }
 }

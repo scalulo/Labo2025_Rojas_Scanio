@@ -1,5 +1,6 @@
 package Unidad1;
 
+import Herencia.Computadoras.Cliente;
 import Unidad1.Enums.Editorial;
 
 import java.time.LocalDate;
@@ -14,7 +15,6 @@ public class Libro {
 
     public Libro() {
         this.titulo = "Don quijote";
-        this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
         this.editorial =  Editorial.SUDAMERICA  ;
@@ -22,7 +22,6 @@ public class Libro {
     }
     public Libro(String titulo1){
         this.titulo=titulo1;
-        this.autor = new Persona();
         this.isbn = 124214;
         this.paginas = 321;
         this.editorial = Editorial.ALIANZA;
@@ -100,7 +99,7 @@ public class Libro {
 
     public static void main(String[] args) {
         String titulo="La biblia";
-        Persona autor=new Persona();
+        Cliente autor=new Cliente("pepo",3,"cnid","wdawd",1244);
         int isbn = 2453;
         int paginas=213;
         Editorial editorial= Editorial.KAPELUSZ;

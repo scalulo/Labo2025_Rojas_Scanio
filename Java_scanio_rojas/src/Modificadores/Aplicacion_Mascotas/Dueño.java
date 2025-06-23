@@ -17,4 +17,9 @@ public Dueño(String nombre, int edad, String direccion, String apellido, ArrayL
 
 }
 
+
+
+
+
+
 }

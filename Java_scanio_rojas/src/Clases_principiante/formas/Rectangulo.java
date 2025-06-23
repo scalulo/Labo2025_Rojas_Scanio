@@ -1,6 +1,6 @@
 package Clases_principiante.formas;
 
-public class Rectangulo  {
+public class Rectangulo extends FiguraGeometrica  {
     private double base;
     private double altura;
 
@@ -28,11 +28,14 @@ public class Rectangulo  {
         this.base = base;
     }
 
-    public double Area (){
+    @Override
+    public double calcularArea(){
         double area= base*altura;
         return area;
     }
-    public double Perimetro () {
+
+    @Override
+    public double calcularPerimetro() {
         double perimetro= 2*(base+altura);
         return perimetro;
     }
@@ -51,10 +54,8 @@ public class Rectangulo  {
 
 
         System.out.println("Radio de c1: " + r1.getAltura());
-        System.out.println("Área de c1: " + r1.Area());
-        System.out.println("Perímetro de c1: " + r1.Perimetro());
+        System.out.println("Área de c1: " + r1.calcularArea());
+        System.out.println("Perímetro de c1: " + r1.calcularPerimetro());
 
-        System.out.println("Radio de c2: " + r2.getAltura());
-        System.out.println("Área de c2: " + r2.Area());
-        System.out.println("Perímetro de c2: " + r2.Perimetro());    }
+   }
 }

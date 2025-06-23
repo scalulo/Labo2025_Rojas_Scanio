@@ -112,7 +112,7 @@
             ArrayList<Pedido> pedidos=new ArrayList<>();
 
             Profesor profe1 = new Profesor();
-            Alumno alumno1 = new Alumno("Lulo", "Rojas", "2a");
+            Alumno alumno1 = new Alumno("Lulo",3,"dsda", "Rojas", "2a");
 
             Pedido pedido2=new Pedido(LocalDate.now(), LocalTime.now(), Estado_plato.CANCELADO, platos, alumno1);
             Pedido pedido1=new Pedido();

@@ -1,5 +1,6 @@
 package Herencia.Pedido_alumerzo;
 
+import Herencia.Computadoras.Cliente;
 import Unidad1.Persona;
 
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ public class Pedido {
         this.entrega = LocalTime.from(LocalDate.of(2025,10,15));
         this.estado = Estado_plato.PENDIENTE;
         this.platos = platos;
-        Solicitante = new Persona();
+        Solicitante = new Cliente("pepo",23,"cueca 343","de satnis",2344);
     }
     public Pedido(LocalDate creacion, LocalTime entrega, Estado_plato estado, ArrayList<Plato> platos, Persona solicitante) {
         this.creacion = creacion;

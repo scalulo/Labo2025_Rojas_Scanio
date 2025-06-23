@@ -52,9 +52,7 @@ public class Operaciones_basicas {
         numeros.add(3);
         numeros.add(1);
 
-        personas.add(new Persona("Luca",78, "xxx"));
-        personas.add(new Persona("Santi",18, "xxx"));
-        personas.add(new Persona("Benja",28,"xxx"));
+
 
 
         System.out.println(Operaciones_basicas.sumar(numeros));
