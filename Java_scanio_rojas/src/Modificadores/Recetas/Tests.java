@@ -21,10 +21,6 @@ public class Tests {
         ArrayList<Receta> dificiles=new ArrayList<>();
         dificiles.add(postre1);
     }
-    @Test
-    public void buscar(){
 
-        assertEquals(dificiles, );
-    }
     }
 
