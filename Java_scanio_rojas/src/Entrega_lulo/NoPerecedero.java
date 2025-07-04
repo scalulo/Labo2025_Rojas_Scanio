@@ -2,16 +2,16 @@ package Entrega_lulo;
 
 import java.time.LocalDate;
 
-public class NoPerecederos extends Producto {
+public class NoPerecedero extends Producto {
     private int peso;
     private boolean envoltorio;
 
-    public NoPerecederos() {
+    public NoPerecedero() {
         this.peso = 120;
         this.envoltorio = true;
     }
 
-    public NoPerecederos(int codigo, String nombre, String marca, Empresa empresa, LocalDate embasado, int precio, int peso, boolean envoltorio) {
+    public NoPerecedero(int codigo, String nombre, String marca, Empresa empresa, LocalDate embasado, int precio, int peso, boolean envoltorio) {
         super(codigo, nombre, marca, empresa, embasado, precio);
         this.peso = peso;
         this.envoltorio = envoltorio;
@@ -34,7 +34,27 @@ public class NoPerecederos extends Producto {
     }
 
     @Override
-    public void mostrar() {
+    public boolean estoy_vencido() {
+        return false;
 
+    }
+
+    @Override
+    public long dias_vencimientos() {
+
+        return -1;
+    }
+
+    @Override
+    public boolean tengo_envoltorio() {
+        if(envoltorio==true){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean todavia_consumible() {
+        return false;
     }
 }

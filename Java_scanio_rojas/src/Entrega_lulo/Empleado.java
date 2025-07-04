@@ -2,6 +2,7 @@ package Entrega_lulo;
 
 import javax.sound.sampled.Port;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Empleado {
@@ -76,5 +77,14 @@ public class Empleado {
 
     public void setRegalos(ArrayList<Producto> regalos) {
         this.regalos = regalos;
+    }
+
+    public long años_trabajando(){
+        long anos= ChronoUnit.YEARS.between(fecha_ingreso, LocalDate.now());
+        return anos;
+    }
+    public long edad(){
+        long anos=ChronoUnit.YEARS.between(nacimiento, LocalDate.now());
+                return anos;
     }
 }

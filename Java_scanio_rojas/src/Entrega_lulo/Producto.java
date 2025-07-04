@@ -77,7 +77,10 @@ public abstract class Producto {
         this.precio = precio;
     }
 
-    public abstract void mostrar();
+    public abstract boolean estoy_vencido();
+    public abstract long dias_vencimientos();
+    public abstract boolean tengo_envoltorio();
+    public boolean todavia_consumible();
 
 
 }

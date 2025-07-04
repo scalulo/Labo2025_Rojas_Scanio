@@ -6,16 +6,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Empresa {
-    private  ArrayList<Producto> productos;
+    private ArrayList<Producto> productos;
     private String domicilio;
     private String nombre;
     private ArrayList<Empleado> empleados;
 
-    public Empresa(){
-        this.productos=new ArrayList<>();
-        this.domicilio="Constituyentes 2334";
-        this.nombre="Nike";
-        this.empleados=new ArrayList<>();
+    public Empresa() {
+        this.productos = new ArrayList<>();
+        this.domicilio = "Constituyentes 2334";
+        this.nombre = "Nike";
+        this.empleados = new ArrayList<>();
     }
 
     public Empresa(ArrayList<Producto> productos, String domicilio, String nombre, ArrayList<Empleado> empleados) {
@@ -57,22 +57,34 @@ public class Empresa {
         this.empleados = empleados;
     }
 
-    public int calcular(){
-        int contador=0;
-        for(Empleado e:empleados){
+    public int calcular() {
+        int contador = 0;
+        for (Empleado e : empleados) {
             long meses = ChronoUnit.MONTHS.between(e.getFecha_ingreso(), LocalDate.now());
-            contador+=meses/6;
+            contador += meses / 6;
         }
         return contador;
 
     }
 
-    public int salarios(){
-        int contador=0;
-        for(Empleado e:empleados){
-            contador+=e.getSalario();
+    public int salarios() {
+        int contador = 0;
+        for (Empleado e : empleados) {
+            contador += e.getSalario();
 
         }
         return contador;
     }
+
+    public ArrayList<Empleado> mayores_60(){
+        ArrayList<Empleado> mayores=new ArrayList<>();
+        for(Empleado emp:empleados){
+            if(emp.edad()>60){
+                mayores.add(emp);
+            }
+        }
+        return mayores;
+    }
+
+
 }
