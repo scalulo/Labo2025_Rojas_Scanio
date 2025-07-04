@@ -1,7 +1,7 @@
 package Modificadores.Aplicacion_Mascotas;
 
 public class Pez extends Mascota {
-    static int vidas = 10;
+    private static int vidas = 10;
     private int vidas_actuales;
 
     public Pez() {
