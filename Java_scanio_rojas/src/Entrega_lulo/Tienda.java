@@ -62,65 +62,79 @@ public class Tienda {
                 System.out.println("Cantidad de productos para esta empresa: " + e.calcular());
             }
 
-            /*
-            Arraylist<Producto> regalos_a_dar;
-            for(Empresa e: empresa){
-            for(Empleado emp:e.getEmpleados()){
-                for(Producto p:emp.getRegalos()){
-                    regalos_a_dar.add(p);
-                }
-            }
-            }
-
-
-             */
-
         }
 
 
     }
 
     public Empresa mejor_proveedor() {
-        Empresa aux = new Empresa();
-        int cant = 0;
-        int cantaux = 0;
 
+        Empresa mejor = new Empresa();
+        int max = 0;
+
+        for (Empresa e : empresas) {
+            int cant = 0;
 
             for (Producto p : productos) {
-                if(p.getEmpresa().equals(empresas.get(0))){
-                    cant++;
-                    aux=empresas.get(0);
-
-                }
-            }
-            for(Empresa e:empresas){
-                for(Producto p:productos){
-                    if(p.getEmpresa().equals(e)){
-                        cantaux++;
-                        if(cantaux>cant){
-                            aux=e;
-                        }
+                    if (p.getEmpresa().equals(e)) {
+                        cant++;
                     }
-                }
+            }
+
+            if (cant > max) {
+                max = cant;
+                mejor = e;
+            }
         }
-            return aux;
+
+        return mejor;
     }
+
+
+    /*
+    public Empresa mejor_proovedor_alternativa(){
+        int cant=empresas.get(0).getProductos().size();
+        Empresa aux=empresas.get(0);
+
+        for(Empresa e:empresas) {
+
+            if (e.getProductos().size() > cant) {
+                cant = e.getProductos().size(;
+                aux=e;
+            }
+        }
+        return aux;
+
+    }
+
+     */
 
     public void calcular_salarios(Empresa empresa){
-        for(Empresa e:empresas){
-            if(e.equals(empresa)){
-                System.out.println("Cantidad de plata que gasta en salarios: "+e.salarios());
+
+
+                System.out.println("Cantidad de plata que gasta en salarios: "+empresa.salarios());
             }
-        }
-    }
+
+
 
     public void tiempo_vencimiento(Producto producto){
-        for(Producto p: productos){
-            if(p.equals(producto) & p.estoy_vencido()==true){
-                System.out.println("Faltan "+p.dias_vencimientos() +"dias");
+
+        if(producto.getClass().equals(NoPerecedero.class)){
+            System.out.println("Soy no perecedero, no tengo vencimiento");
+            return;
+        }
+
+
+            if(  producto.estoy_vencido()==true) {
+                System.out.println("Estoy vencido");
+            }
+
+
+            else if(  producto.estoy_vencido()==false){
+                System.out.println("Faltan: "+producto.dias_vencimientos()+"para el vencimiento");
             }
         }
-    }
+
 
     public boolean aplica_descuento(){
         int contador =0;
@@ -131,9 +145,13 @@ public class Tienda {
             }
         }
         if(contador>=productos.size()*0.45){
+            System.out.println("Aplica");
             return true;
         }
-        return false;
+        else {
+            System.out.println("No aplica");
+            return false;
+        }
     }
 
     public long años(){
@@ -145,10 +163,16 @@ public class Tienda {
 
     public void consumible(){
         for(Producto p: productos) {
-            p.todavia_consumible();
+            if(p.getClass().equals(NoPerecedero.class)){
+                System.out.println("Soy no perecedero");
+            }
+            else {
+                p.todavia_consumible();
+            }
+        }
         }
 
-        }
+
 
         public void agregar_empresa(Empresa empresa){
         empresas.add(empresa);
@@ -222,6 +246,7 @@ public class Tienda {
 
         //Funciones
 
+        tienda.vencidos();
         tienda.regalar(e1);
         tienda.mejor_proveedor();
         tienda.calcular_salarios(e1);

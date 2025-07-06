@@ -3,14 +3,14 @@ package Entrega_lulo;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Perecedero extends Producto{
+public class Perecedero extends Producto {
     private LocalDate vencimiento;
     private long dias;
 
-    public Perecedero(){
+    public Perecedero() {
         super();
-        this.vencimiento=LocalDate.now();
-        this.dias=5;
+        this.vencimiento = LocalDate.now();
+        this.dias = 5;
     }
 
     public Perecedero(int codigo, String nombre, String marca, Empresa empresa, LocalDate embasado, int precio, LocalDate vencimiento, long dias) {
@@ -36,46 +36,47 @@ public class Perecedero extends Producto{
     }
 
     @Override
-    public boolean estoy_vencido(){
-        if(vencimiento.isBefore(LocalDate.now())){
+    public boolean estoy_vencido() {
+        if (vencimiento.isBefore(LocalDate.now())) {
             return true;
         }
         return false;
     }
 
-    public long cuantos_dias_faltan(){
-
-      long dias= ChronoUnit.DAYS.between(LocalDate.now(), vencimiento);
-      if(dias<0){
-          return -1;
-      }
-      return dias;
-    }
 
     @Override
     public long dias_vencimientos() {
 
-        long dias= ChronoUnit.DAYS.between(LocalDate.now(), vencimiento);
-        if(dias<0){
-            return -1;
-        }
+        long dias = ChronoUnit.DAYS.between(LocalDate.now(), vencimiento);
+
         return dias;
     }
+
 
     @Override
     public boolean tengo_envoltorio() {
         return false;
     }
+
     @Override
-    public boolean todavia_consumible(){
-        if(estoy_vencido()==true & dias_vencimientos()*(-1)<dias){
+    public boolean todavia_consumible() {
+        if (estoy_vencido() == false) {
+            System.out.println("No estoy vencido");
+            return false;
+        }
+
+
+        if ( dias_vencimientos() * (-1) < dias) {
             System.out.println("Se puede consumir");
             return true;
-        }
-        else{
+        } else   {
             System.out.println("No se puede consumir");
             return false;
         }
+
     }
 }
+
+
+
 

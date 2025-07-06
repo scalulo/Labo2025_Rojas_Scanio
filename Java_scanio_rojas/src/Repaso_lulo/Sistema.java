@@ -59,7 +59,7 @@ public class Sistema {
 
 
         for(Ticket t: tickets){
-            if(t.getFechaCreacion().isBefore(aux) & t.getEstado()==Estado.ABIERTO){
+            if(t.getFechaCreacion().isBefore(aux) && t.getEstado()==Estado.ABIERTO){
                 aux=t.getFechaCreacion();
                 mas_antiguo=t;
 
