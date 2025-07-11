@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Si tu barrio hablara</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+    .hero {
+      background: linear-gradient(90deg, #0066ff, #00ccff);
+      color: white;
+      padding: 3rem;
+      text-align: center;
+    }
+    #map {
+      height: 500px;
+      border-radius: 12px;
+    }
+    .historia-card {
+      transition: transform 0.2s;
+    }
+    .historia-card:hover {
+      transform: scale(1.02);
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="hero">
+    <h1>📍 Si tu barrio hablara</h1>
+    <p>Un mapa con nuestras historias, recuerdos y lugares que merecen ser contados</p>
+  </div>
+
+  <!-- Mapa + Historias -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <!-- Mapa -->
+      <div class="col-lg-8">
+        <div id="map"></div>
+      </div>
+
+      <!-- Historias destacadas -->
+      <div class="col-lg-4">
+        <h3>🧾 Historias destacadas</h3>
+
+        <a href="historia.html" class="text-decoration-none text-dark">
+  <div class="card mb-3 historia-card">
+    <div class="card-body">
+      <h5 class="card-title">El árbol de la esquina</h5>
+      <p class="card-text">Ese viejo árbol fue nuestro punto de encuentro por años. Testigo de charlas, risas y promesas.</p>
+      <small class="text-muted">Calle Rivadavia y Jujuy</small>
+    </div>
+  </div>
+</a>
+
+        <div class="card mb-3 historia-card">
+          <div class="card-body">
+            <h5 class="card-title">La casa embrujada</h5>
+            <p class="card-text">Dicen que nadie puede pasar una noche ahí sin escuchar ruidos... ¿te animás?</p>
+            <small class="text-muted">Pasaje Los Andes 1345</small>
+          </div>
+        </div>
+
+        <div class="card mb-3 historia-card">
+          <div class="card-body">
+            <h5 class="card-title">Don Tito y su almacén</h5>
+            <p class="card-text">El mejor pan de la ciudad, la mejor historia del barrio. Siempre con una sonrisa.</p>
+            <small class="text-muted">Av. Mitre al 800</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <div class="container my-5">
+    <h2 class="mb-4">📝 Contanos tu historia</h2>
+    <form>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Título</label>
+          <input type="text" class="form-control" placeholder="Ej: La bici robada que volvió sola">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Ubicación aproximada</label>
+          <input type="text" class="form-control" placeholder="Ej: Juan B. Justo 456">
+        </div>
+        <div class="col-12">
+          <label class="form-label">Historia</label>
+          <textarea class="form-control" rows="4" placeholder="Escribí tu historia con detalle..."></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary">Enviar historia</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-5">
+    <p>© 2025 Si tu barrio hablara - Proyecto escolar creado con amor 💙</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Mapa centrado en Buenos Aires (puedes cambiar las coordenadas)
+    var map = L.map('map').setView([-34.6037, -58.3816], 13);
+
+    // Mapa base
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data © OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marcadores con historias
+    L.marker([-34.6025, -58.3845]).addTo(map)
+      .bindPopup("<strong>El árbol de la esquina</strong><br>Testigo de años de amistad.");
+
+    L.marker([-34.6045, -58.3795]).addTo(map)
+      .bindPopup("<strong>Casa embrujada</strong><br>Dicen que hay ruidos por la noche...");
+
+    L.marker([-34.6060, -58.3820]).addTo(map)
+      .bindPopup("<strong>Don Tito y su almacén</strong><br>Un clásico del barrio.");
+  </script>
+
+</body>
+</html>

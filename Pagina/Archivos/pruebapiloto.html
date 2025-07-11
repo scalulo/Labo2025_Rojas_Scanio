@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Susurros Urbanos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1c1b23;
+      color: #dcdcdc;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 30px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      min-height: 600px;
+    }
+
+    .sidebar h4 {
+      color: #a970ff;
+      margin-bottom: 10px;
+    }
+
+    .story-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+
+    .story-list li {
+      margin-bottom: 8px;
+    }
+
+    .story-list a {
+      color: #dcdcdc;
+      text-decoration: none;
+    }
+
+    .story-list a:hover {
+      color: #a970ff;
+    }
+
+    /* FILTROS */
+    .filters label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* DESTACADA */
+    .featured-story {
+      margin-top: 30px;
+      padding: 10px;
+      background-color: #1c1b23;
+      border: 2px solid #6b3fa0;
+      border-radius: 10px;
+    }
+
+    .featured-story a {
+      color: #a970ff;
+      text-decoration: none;
+    }
+
+    .featured-story a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAPA */
+    #map {
+      height: 600px;
+      width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="sidebar">
+      <h4>🧾 Historias Cercanas</h4>
+      <ul class="story-list">
+        <li><a href="historia_teatro_colon.html">👻 Teatro Colón</a></li>
+        <li><a href="historia_hotel_castelar.html">🏨 Hotel Castelar</a></li>
+        <li><a href="historia_san_telmo.html">🪦 Callejón de San Telmo</a></li>
+      </ul>
+
+      <h4>🎭 Filtros</h4>
+      <div class="filters">
+        <label><input type="checkbox" checked> Fantasmas</label>
+        <label><input type="checkbox" checked> Robos</label>
+        <label><input type="checkbox" checked> Misterios</label>
+      </div>
+
+      <div class="featured-story">
+        <h4>🔮 Historia destacada</h4>
+        <p><strong>La Dama de Blanco</strong> — Se aparece en la Avenida de Mayo cada madrugada lluviosa...</p>
+        <a href="historia_dama_blanco.html">Leer más →</a>
+      </div>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <script>
+    const map = L.map('map').setView([-34.6037, -58.3816], 13); // Buenos Aires
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marcadores con redirección
+    const markers = [
+      {
+        lugar: "Teatro Colón",
+        coords: [-34.6012, -58.3832],
+        url: "historia_teatro_colon.html"
+      },
+      {
+        lugar: "Hotel Castelar",
+        coords: [-34.6084, -58.3828],
+        url: "historia_hotel_castelar.html"
+      },
+      {
+        lugar: "San Telmo",
+        coords: [-34.6195, -58.3712],
+        url: "historia_san_telmo.html"
+      }
+    ];
+
+    markers.forEach(marker => {
+      L.marker(marker.coords)
+        .addTo(map)
+        .bindPopup(`<a href="${marker.url}">${marker.lugar}</a>`);
+    });
+  </script>
+</body>
+</html>
