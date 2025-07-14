@@ -80,7 +80,7 @@ public abstract class Producto {
     public abstract boolean estoy_vencido();
     public abstract long dias_vencimientos();
     public abstract boolean tengo_envoltorio();
-    public boolean todavia_consumible();
+    public abstract boolean todavia_consumible();
 
 
 }
