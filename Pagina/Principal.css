@@ -9,6 +9,9 @@
   width: 100%;
 }
 
+.card{
+--bs-card-bg:var(none);
+}
 
 .navbartoda{
     background-color: #3a2b4c;
@@ -394,18 +397,20 @@
 
 #map {
   width: 40em;
-  height: 40em;
+  height: 36em;
   border-radius: 15px;
   margin-top: 4em;
   margin-left: 8%;
   border: 3px solid #6b3fa0;
-  box-shadow: 0 0 20px rgba(169, 112, 255, 0.3);
+  box-shadow: 0 0 20px rgba(169, 112,/*  */ 255, 0.3);
 }
 
 
 .card{
   margin-top: 3em;
   margin-left: 3em;
+  
+  
 }
 .card-body{
 background-color: #434057;
@@ -413,15 +418,20 @@ background-color: #434057;
   box-shadow: 0 0 20px rgba(169, 112, 255, 0.3);
 }
 .destacada{
-  width: 25em; 
+  width: 100%; 
   height: 8em;
   margin: 0;
+  margin-top: 3em;
 }
 .info_pag{
   margin-bottom: 3em;
 }
 .subtitulo{
   color: #a970ff;
+}
+
+p{
+  color: #000000;
 }
 
 @media(max-width:764px ) and (min-width:550px){
@@ -434,8 +444,54 @@ background-color: #434057;
 
 @media(max-width:550px){
   #map{
-    width: 15em;
-    margin-right: 3em;
+    width: 30em;
+    margin-right: 5em;
   }
 }
 /* Barra al costado del mapa */
+
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  border: none;
+  padding: 0px 20px;
+  background-color: rgb(168, 38, 255);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px rgb(140, 32, 212);
+  transition-duration: .3s;
+  margin: 5em 1em 10em 10em;
+}
+
+.svg {
+  width: 13px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  fill: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+  right: 43%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: .3s;
+}
+
+.Btn:active {
+  transform: translate(3px , 3px);
+  transition-duration: .3s;
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
