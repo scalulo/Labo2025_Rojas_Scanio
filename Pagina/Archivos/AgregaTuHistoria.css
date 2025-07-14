@@ -1,22 +1,18 @@
 /* Fondo general oscuro */
 .body {
   background-color: #1c1b23; 
-  overflow:scroll;
+  overflow:scr  oll;
 }
 
 /* Filas 100% ancho */
 .row {
   width: 100%;
 }
-.card{
---bs-card-bg:var(none);
-}
 
 .navbartoda{
     background-color: #3a2b4c;
 }
 
-/* Navbar: flex distribución y fondo tétrico */
 .generalnav {
   display: flex;
   flex-wrap: inherit;
@@ -26,61 +22,57 @@
   justify-content: space-between;
 }
 
-/* Título del sitio */
-.titulo {
-  color: #a970ff; /* morado claro */
-  padding-right: 10%;
-  padding-left: 3%;
+.titul {
+    color: #e0d6ff;
+    margin-left: 27%;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding-right: 10%;
+    margin-bottom: 1em;
 }
 
-/* Categorías link */
 .categorias {
-  color: #dcdcdc; /* gris claro */
+  color: #dcdcdc; 
   padding-right: 3%;
 }
 
-/* Botón de categorías */
 .paste-button {
   position: relative;
   display: block;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Botón principal */
 .button {
-  background-color: #2a2a2a; /* gris oscuro */
-  color: #d0c7e2; /* violeta muy claro */
+  background-color:  #302c3f; 
+  color: #d0c7e2; 
   padding: 10px 15px;
   font-size: 15px;
   font-weight: bold;
-  border: 3px solid #6b3fa0; /* morado */
+  border: 3px solid #6b3fa0; 
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-/* Hover del botón principal */
 .button:hover {
-  background-color: #3a2b4c; /* morado profundo */
-  color: #ffffff; /* blanco */
+  background-color: #3a2b4c; 
+  color: #ffffff; 
 }
 
-/* Dropdown contenido */
 .dropdown-content {
   display: none;
   font-size: 13px;
   position: absolute;
   z-index: 1;
   min-width: 200px;
-  background-color: #1c1b23; /* fondo más claro que navbar */
-  border: 2px solid #6b3fa0; /* morado */
+  background-color: #1c1b23; 
+  border: 2px solid #6b3fa0; 
   border-radius: 0 15px 15px 15px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.4);
 }
 
-/* Links dentro del dropdown */
 .dropdown-content a {
-  color: #a970ff; /* violeta claro */
+  color: #a970ff; 
   padding: 8px 10px;
   text-decoration: none;
   display: block;
@@ -395,19 +387,7 @@
 }
 
 
-/* mapa*/
-
-#map {
-  width: 40em;
-  height: 36em;
-  border-radius: 15px;
-  margin-top: 4em;
-  margin-left: 8%;
-  border: 3px solid #6b3fa0;
-  box-shadow: 0 0 20px rgba(169, 112,/*  */ 255, 0.3);
-  z-index: 1;
-}
-
+/* Card*/
 
 .card{
   margin-top: 3em;
@@ -420,75 +400,181 @@ background-color: #434057;
  border: 3px solid #6b3fa0;
   box-shadow: 0 0 20px rgba(169, 112, 255, 0.3);
 }
-.destacada{
-  width: 100%; 
-  height: 8em;
-  margin: 0;
-  margin-top: 3em;
-}
-.info_pag{
-  margin-bottom: 3em;
-}
-.subtitulo{
-  color: #a970ff;
-}
-
-p{
-  color: #000000;
-}
-
-@media(max-width:764px ) and (min-width:550px){
- 
-.card{
-  margin-top: 3em;
-  margin-left: 3em;
-  
-  
-}
-.card-body{
-background-color: #434057;
- border: 3px solid #6b3fa0;
-  box-shadow: 0 0 20px rgba(169, 112, 255, 0.3);
-}
-.destacada{
-  width: 100%; 
-  height: 8em;
-  margin: 0;
-  margin-top: 3em;
-}
-.info_pag{
-  margin-bottom: 3em;
-}
-.subtitulo{
-  color: #a970ff;
-}
-
-p{
-  color: #000000;
-}
 
 
 
+.anonimo{
+    margin-top: 2em;
+}
 
-/* Barra al costado del mapa */
+#inputEmail3{
+      background-color: #302c3f;
+      color: #e0d6ff;
+      border: 1px solid #6b3fa0;
+}
 
-.Btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100px;
-  height: 40px;
-  border: none;
-  padding: 0px 20px;
-  background-color: rgb(168, 38, 255);
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0px rgb(140, 32, 212);
-  transition-duration: .3s;
-  margin: 5em 1em 10em 10em;
+#floatingTextarea2{
+    height: 8em;
+    background-color: #302c3f;
+      color: #e0d6ff;
+      border: 1px solid #6b3fa0;
+      margin-bottom: 1em;
+}
+.anonimo {
+          margin-top: 2em;
+        }
+
+        /* Estilo mejorado para el input de título */
+        #inputEmail3 {
+          background-color: #302c3f;
+          color: #e0d6ff;
+          border: 2px solid #6b3fa0;
+          border-radius: 8px;
+          padding: 12px 15px;
+          font-size: 16px;
+          transition: all 0.3s ease;
+        }
+
+        #inputEmail3:focus {
+          background-color: #3a2b4c;
+          border-color: #a970ff;
+          color: #ffffff;
+          box-shadow: 0 0 10px rgba(169, 112, 255, 0.3);
+          outline: none;
+        }
+
+        #inputEmail3:hover {
+          border-color: #8a5fc7;
+        }
+        #inputEmail3::placeholder{
+            color: #9d8bb5;
+;
+        }
+
+        /* Comentario */
+        #comentarioInput {
+          background-color: #302c3f;
+          color: #e0d6ff;
+          border: 2px solid #6b3fa0;
+          border-radius: 8px;
+          padding: 12px 15px;
+          font-size: 16px;
+          width: 100%;
+          transition: all 0.3s ease;
+        }
+
+        #comentarioInput:focus {
+          background-color: #3a2b4c;
+          border-color: #a970ff;
+          color: #ffffff;
+          box-shadow: 0 0 10px rgba(169, 112, 255, 0.3);
+          outline: none;
+        }
+
+        #comentarioInput:hover {
+          border-color: #8a5fc7;
+        }
+
+        #comentarioInput::placeholder {
+          color: #9d8bb5;
+          opacity: 0.8;
+        }
+
+        /*Label*/
+        .form-label {
+     color: #e0d6ff;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+
+        /*Botones */
+
+
+      
+
+        .form-check-label {
+          color: #dbc3ff;
+          margin-left: 0.5rem;
+        }
+
+
+
+        /*Contenedor del form*/
+        .form-container {
+          background: linear-gradient(135deg, #434057 0%, #3a2b4c 100%);
+          border-radius: 15px;
+          padding: 2rem;
+          margin: 2rem auto;
+          max-width: 700px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+
+        .comentario-group {
+          margin-bottom: 1.5rem;
+        }
+
+        .col-form-label{
+            margin-right: 2em;
+        }
+           /*coordenadas */
+        #coord-input {
+          background-color: #302c3f;
+          color: #e0d6ff;
+          border: 2px solid #6b3fa0;
+          border-radius: 8px;
+          padding: 12px 15px;
+          font-size: 16px;
+          transition: all 0.3s ease;
+        }
+
+        #coord-input:focus {
+          background-color: #3a2b4c;
+          border-color: #a970ff;
+          color: #ffffff;
+          box-shadow: 0 0 10px rgba(169, 112, 255, 0.3);
+          outline: none;
+        }
+
+        #coord-input:hover {
+          border-color: #8a5fc7;
+        }
+
+        #coord-input::placeholder {
+          color: #9d8bb5;
+          opacity: 0.8;
+        }
+
+        .coord-group {
+          margin-top: 1.5rem;
+        }
+
+        .coord-label {
+          color: #e0d6ff;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 0.8rem;
+          display: block;
+        }
+
+        .Btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 50%;
+            height: 3em;
+            border: none;
+            padding: 0px 20px;
+            background-color: rgb(137, 40, 201);
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 5px 5px 0px rgb(148, 0, 247);
+            transition-duration: .3s;
+            margin: 18% 15% 1em 40%;
 }
 
 .svg {
@@ -517,82 +603,33 @@ p{
   transition-duration: .3s;
   box-shadow: 2px 2px 0px rgb(140, 32, 212);
 }
-}
-
-.link{
-  text-decoration: none;
-}
-
-
-/* BOTON AGREGA TU HISTORIA */
-
-.Btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 13em;
-  height: 3em;
-  border: none;
-  padding: 0px 20px;
-  background-color:rgb(137, 40, 201);
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0px rgb(140, 32, 212);
-  transition-duration: .3s;
-  margin: 5em 1em 10em 11em;
-}
-
-.svg {
-  width: 13px;
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-  fill: white;
-  transition-duration: .3s;
-}
-
-.Btn:hover {
-  color: transparent;
-}
-
-.Btn:hover svg {
-  right: 43%;
-  margin: 0;
-  padding: 0;
-  border: none;
-  transition-duration: .3s;
-}
-
-.Btn:active {
-  transform: translate(3px , 3px);
-  transition-duration: .3s;
-  box-shadow: 2px 2px 0px rgb(140, 32, 212);
-}
-
-@media(max-width:500px){
-  #map{
-    width: 90%;
-    margin-left: 12%;
-  }
-
-  .Btn{
-      margin-left: 6em;
-  }
-
-}
-
 @media(max-width:990px){
   .paste-button {
 
     margin-bottom: 1em;
 }
+
+.Btn{
+    font-size:small;
+}
 .container{
   margin-bottom: 1em;
   margin-left: 0em;
 }
+}
 
+@media(max-width:560px){
+    .Btn{
+        font-size: xx-small;
+        padding-right: 50px;
+        margin-right: 6em;
+    }
 
+}
+
+@media(max-width:745px){
+
+    path{
+        display: none;
+    }
 }

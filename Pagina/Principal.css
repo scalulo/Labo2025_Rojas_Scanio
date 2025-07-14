@@ -8,6 +8,7 @@
 .row {
   width: 100%;
 }
+
 .card{
 --bs-card-bg:var(none);
 }
@@ -118,7 +119,6 @@
   display: inline-flex;
   align-items: center;
   height: 35px;
-  margin-left: 0em;
 }
 
 /* Input buscador */
@@ -198,7 +198,7 @@
   --burger-line-width: 1.125em;
   --burger-line-height: 0.125em;
   --burger-offset: 0.625em;
-  --burger-bg: #6b3fa0;
+  --burger-bg: #3a2b4c;
   --burger-color: #333;
   --burger-line-border-radius: 0.1875em;
   --burger-diameter: 3.125em;
@@ -236,14 +236,13 @@
   --nav-button-padding-y: 0.375em;
   --nav-button-border-radius: 0.375em;
   --nav-button-font-size: 17px;
-  --nav-button-hover-bg: #6b3fa0;
+  --nav-button-hover-bg: #3a2b4c;
   --nav-button-hover-text-color: #fff;
   --nav-button-distance: 0.875em;
   /* underline */
   --underline-border-width: 0.0625em;
   --underline-border-color: #ccc;
   --underline-margin-y: 0.3125em;
-  z-index: 1000;
 }
 
 /* popup settings 👆 */
@@ -276,7 +275,6 @@
 }
 
 .popup-window {
-  z-index: 1001;
   transform: scale(var(--nav-default-scale));
   visibility: hidden;
   opacity: 0;
@@ -335,7 +333,7 @@
 
 .popup-window ul li:nth-child(4) svg,
 .popup-window ul li:nth-child(5) svg {
-  color: rgb(153, 153, 153);
+  colo30pxr: rgb(153, 153, 153);
 }
 
 .popup-window ul li:nth-child(7) svg {
@@ -405,7 +403,6 @@
   margin-left: 8%;
   border: 3px solid #6b3fa0;
   box-shadow: 0 0 20px rgba(169, 112,/*  */ 255, 0.3);
-  z-index: 1;
 }
 
 
@@ -439,7 +436,10 @@ p{
 
 @media(max-width:764px ) and (min-width:550px){
  
-.card{
+ #map{
+  width: 25em;
+  margin-right: 0em;
+ }.card{
   margin-top: 3em;
   margin-left: 3em;
   
@@ -467,9 +467,20 @@ p{
   color: #000000;
 }
 
+@media(max-width:764px ) and (min-width:550px){
+ 
+ #map{
+  width: 25em;
+  margin-right: 0em;
+ }
+}
 
-
-
+@media(max-width:550px){
+  #map{
+    width: 30em;
+    margin-right: 5em;
+  }
+}
 /* Barra al costado del mapa */
 
 .Btn {
@@ -519,30 +530,31 @@ p{
 }
 }
 
-.link{
-  text-decoration: none;
+@media(max-width:550px){
+  #map{
+    width: 30em;
+    margin-right: 5em;
+  }
 }
-
-
-/* BOTON AGREGA TU HISTORIA */
+/* Barra al costado del mapa */
 
 .Btn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 13em;
-  height: 3em;
+  width: 100px;
+  height: 40px;
   border: none;
   padding: 0px 20px;
-  background-color:rgb(137, 40, 201);
+  background-color: rgb(168, 38, 255);
   color: white;
   font-weight: 500;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 5px 5px 0px rgb(140, 32, 212);
   transition-duration: .3s;
-  margin: 5em 1em 10em 11em;
+  margin: 5em 1em 10em 10em;
 }
 
 .svg {
@@ -570,29 +582,4 @@ p{
   transform: translate(3px , 3px);
   transition-duration: .3s;
   box-shadow: 2px 2px 0px rgb(140, 32, 212);
-}
-
-@media(max-width:500px){
-  #map{
-    width: 90%;
-    margin-left: 12%;
-  }
-
-  .Btn{
-      margin-left: 6em;
-  }
-
-}
-
-@media(max-width:990px){
-  .paste-button {
-
-    margin-bottom: 1em;
-}
-.container{
-  margin-bottom: 1em;
-  margin-left: 0em;
-}
-
-
 }

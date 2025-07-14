@@ -3,21 +3,11 @@
   
 <head>
 
-    <link rel="stylesheet" href="Principal.css">
+    <link rel="stylesheet" href="AgregaTuHistoria.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    
-       <!--mapa-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>  
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-     </script>
-
-
    </head>
 
 
@@ -126,94 +116,89 @@
     </div>
   </div>
 </nav>
-<!--ACA TERMINA LA NAVBAR Y EMPIEZA EL BODY-->
 
-
-  <div class="row">
-  <div class="col-md-6">
-  <div class="card" style="width: 90%; height: 40%; margin-bottom: 2em; background-color: #6b3fa0;">
+<div class="col-md-12">
+<div class="card" style="width: 46%; height: 2em; margin-bottom: 2em; background-color: #6b3fa0; margin-left: 23%;">
   <div class="card-body">
-    <h5 class="card-title titulo" style="color:blueviolet; margin-bottom: 1em;">¿Que es susurros urbanos?</h5>
-    <p class="card-text info_pag" style="color: rgb(233, 194, 255);">      Esta plataforma explora los rincones más oscuros de la Ciudad de Buenos Aires, revelando historias de crímenes sin resolver, apariciones sobrenaturales y hechos inquietantes. Hacé clic en los marcadores del mapa para descubrir los relatos ocultos detrás de cada lugar.
-</p>
-    
-<div class="card destacada " style="background-color: #6b3fa0;"  >
-  <div class="card-body">
-    <h5 class="card-title" style="color:blueviolet">🔮 Historia destacada</h5>
-    <h6 class="card-subtitle mb-2 " style="color: rgb(233, 194, 255);" >La Maldición de la Mansión de Fransisco Beiró</h6>
-    <p class="card-text">En una esquina silenciosa del barrio de Devoto, se alza una vieja mansión que el tiempo se negó a derrumbar. Fue construida a fines del siglo XIX por Francisco Beiró, un político respetado, pero también un hombre obsesionado con el ocultismo.</p>
-    <a href="#" class="card-link">Leer hisoria</a>
+
+    <label class="titul">🖊️Contanos tu historia</label>
+
+
+    <form>
+  <div class="row mb-3">
+    <label for="inputEmail3" class="coord-label">Titulo</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control " id="inputEmail3" placeholder="Ingresa un titulo espeluznante..">
+    </div>
   </div>
+     <div class="comentario-group">
+        <label for="comentarioInput" class="form-label titulo">Historia</label>
+        <input type="text" class="form-control" id="comentarioInput" placeholder="Escribe tu hisoria aquí...">
+      </div>
+  <fieldset class="row mb-3 anonimo">
+    <legend class="col-form-label col-sm-2 pt-0 " style=" color: #e0d6ff; font-size: 16px; font-weight: 700;"> Usuario</legend>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+        <label class="form-check-label" for="gridRadios1">
+            Anonimo
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+        <label class="form-check-label" for="gridRadios2">
+          Con nombre
+        </label>
+      </div>
+     
+      
+      
+
+     <div class="coord-group">
+        <label class="coord-label">Coordenadas</label>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" id="coord-input" placeholder="Latitud" aria-label="Latitud">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control " id="coord-input" placeholder="Longitud" aria-label="Longitud">
+          </div>
+        </div>
+      </div>
+        
+      
+      <label class="coord-label" style="margin-top: 6%;">Categoria</label>
+
+      <div class="paste-button">
+  <button class="button" >Selecciona categoria &nbsp; ▼</button>
+  <div class="dropdown-content">
+    <a id="top" href="#">Fantasmas</a>
+    <a id="middle" href="#">Robos</a>
+    <a id="bottom" href="#">Secuestros</a>
   </div>
-
-  <div class="card destacada" style="background-color: #6b3fa0;">
-  <div class="card-body">
-    <h5 class="card-title titulo" style="color:blueviolet; margin-bottom: 1em;">🔊 Voces del Misterio</h5>
-
-    <h6 class="card-subtitle mb-2" style="color: rgb(233, 194, 255);">Anónimo - Devoto</h6>
-    <p class="card-text">"A veces siento que alguien me observa desde la ventana del edificio abandonado de Segurola y Habana..."</p>
-    <hr style="border-color: #6b3fa0;">
-
-    <h6 class="card-subtitle mb-2" style="color: rgb(233, 194, 255);">Lucía R. - Almagro</h6>
-    <p class="card-text">"Nunca debí entrar a el túnel de av Directorio, algo me siguió hasta casa."</p>
-    <hr style="border-color: #6b3fa0;">
-
-    <h6 class="card-subtitle mb-2" style="color: rgb(233, 194, 255);">Marcos - Caballito</h6>
-    <p class="card-text">"Escuché un susurro que decía mi nombre y estaba solo en la plaza Lealtad..."</p>
-    <hr style="border-color: #6b3fa0;">
-
-  
-  </div>
-</div>
-</div>
-</div>
 </div>
 
-    <!--mapa-->
-    <div class="col-md-6">
-      <div id="map" class="mapa"></div>
-
-      <div>
-        <a class="link" href="http://127.0.0.1:5500/AgregaTuHistoria.html?gridRadios=option1#">
-          <button href: class="Btn" >Conta tu historia  
-      <svg class="svg"  viewBox="0 0 512 512">
+<div>
+          <button class="Btn">Agregar historia 
+      <svg class="svg  " viewBox="0 0 512 512">
         <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg>
     </button>
-    </a>
       </div>
+        
+      </ul>
 
- 
-       </div>
-              </div>
-    <script>
-  const map = L.map('map').setView([-34.6037, -58.3816], 13); // CABA
+      <form class="d-flex" role="search">
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
 
-  // Marcadores de ejemplo
-  const markers = [
-    {
-      lugar: "El Fantasma del Teatro Colón",
-      coords: [-34.6012, -58.3832],
-      url: "historia_teatro_colon.html"
-    },
-    {
-      lugar: "El espíritu del Hotel Castelar",
-      coords: [-34.6084, -58.3828],
-      url: "historia_hotel_castelar.html"
-    }
-  ];
+    </div>
+  </fieldset>
+  
+  </div>
+</form>
 
-  markers.forEach(marker => {
-    L.marker(marker.coords)
-      .addTo(map)
-      .bindPopup(`<a href="${marker.url}">${marker.lugar}</a>`);
-  });
-</script>
+</div>
+</div>
+</div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   </body>
 </html>
