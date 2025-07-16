@@ -406,6 +406,7 @@
   .card{
     margin-top: 3em;
     margin-left: 3em;
+    width: 40em;
   }
   .card-body{
   background-color: #434057;
@@ -429,7 +430,48 @@
     border: 2px solid #6b3fa0;
     border-radius: 10px;
   }
-  .card.derecha{
-    margin-left:4em;
+  #derecha{
+    margin-left:15em;
+    width: 19em;
   }
  
+  @media (max-width:595px){
+
+    #derecha{
+      margin-left: 3em;
+    }
+
+  }
+
+  .custom-footer {
+  background-color: #2a2a2a;
+  color: #dcdcdc;
+  border-top: 3px solid #6b3fa0;
+  box-shadow: 0 -5px 20px rgba(169, 112, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
+  padding: 1.5em 0em 8.4em 0em;
+}
+
+.footer-title {
+  color: #a970ff;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.footer-link {
+  color: #dcdcdc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #a970ff;
+}
+
+.footer-copy {
+  color: #999;
+  font-size: 0.9em;
+}
