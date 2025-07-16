@@ -1,77 +1,227 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
+  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El árbol de la esquina - Historia</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map {
-      height: 300px;
-      border-radius: 10px;
-    }
-    .hero {
-      background-color: #007bff;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    .content img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
 
-  <!-- Encabezado -->
-  <div class="hero">
-    <h1>🌳 El árbol de la esquina</h1>
-    <p>Calle Rivadavia y Jujuy</p>
+    <link rel="stylesheet" href="Historia.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+      
+
+
+   </head>
+
+
+
+  <body class="body">
+<nav class=" navbar py-1 navbar-expand-lg  navbar-dark bg-dark " style="padding-right: 10%;  ">
+  <div class="container-fluid  ">
+    <a class="navbar-brand titulo" href="#">Susurros Urbanos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <!-- From Uiverse.io by aadium --> 
+<div class="paste-button">
+  <button class="button">Categorias &nbsp; ▼</button>
+  <div class="dropdown-content">
+    <a id="top" href="#">Fantasmas</a>
+    <a id="middle" href="#">Robos</a>
+    <a id="bottom" href="#">Secuestros</a>
   </div>
+</div>
 
-  <!-- Contenido -->
-  <div class="container my-5 content">
-    <div class="row">
-      <div class="col-lg-8">
-        <img src="https://i.imgur.com/1kYGOv3.jpg" alt="El árbol de la esquina">
-        <p>
-          Este árbol estuvo desde antes que yo naciera. Nos juntábamos ahí todos los días después del colegio. 
-          A veces era una portería, otras un castillo. Una vez incluso lo usamos para colgar una piñata.
-        </p>
-        <p>
-          Cada vez que paso por esa esquina siento una mezcla de nostalgia y alegría. 
-          A veces me detengo solo para mirarlo. Si ese árbol hablara, contaría todo lo que vivimos.
-        </p>
-        <a href="princi.html" class="btn btn-secondary mt-3">← Volver al mapa</a>
-      </div>
+        
 
-      <!-- Mapa pequeño -->
-      <div class="col-lg-4 mt-4 mt-lg-0">
-        <h5>📍 Ubicación en el mapa</h5>
-        <div id="map"></div>
-      </div>
+      </ul>
+
+      <form class="d-flex" role="search">
+<!-- From Uiverse.io by benjimich --> 
+<div class="container" style="padding-right: 300px">
+  <input type="text" name="text" class="input" placeholder="Dark Twitch Search">
+  <button class="search__btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+      <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+    </svg>
+  </button>
+</div>
+
+      </form>
+      
+      
+
+     <!-- From Uiverse.io by devkatyall --> 
+<label class="popup">
+  <input type="checkbox" />
+  <div tabindex="0" class="burger">
+    <svg
+      viewBox="0 0 24 24"
+      fill="white"
+      height="20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2c2.757 0 5 2.243 5 5.001 0 2.756-2.243 5-5 5s-5-2.244-5-5c0-2.758 2.243-5.001 5-5.001zm0-2c-3.866 0-7 3.134-7 7.001 0 3.865 3.134 7 7 7s7-3.135 7-7c0-3.867-3.134-7.001-7-7.001zm6.369 13.353c-.497.498-1.057.931-1.658 1.302 2.872 1.874 4.378 5.083 4.972 7.346h-19.387c.572-2.29 2.058-5.503 4.973-7.358-.603-.374-1.162-.811-1.658-1.312-4.258 3.072-5.611 8.506-5.611 10.669h24c0-2.142-1.44-7.557-5.631-10.647z"
+      ></path>
+    </svg>
+  </div>
+  <nav class="popup-window">
+    <legend>Quick Start</legend>
+    <ul>
+      <li>
+        <button>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 4v6.406l-3.753 3.741-6.463-6.462 3.7-3.685h6.516zm2-2h-12.388l1.497 1.5-4.171 4.167 9.291 9.291 4.161-4.193 1.61 1.623v-12.388zm-5 4c.552 0 1 .449 1 1s-.448 1-1 1-1-.449-1-1 .448-1 1-1zm0-1c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm6.708.292l-.708.708v3.097l2-2.065-1.292-1.74zm-12.675 9.294l-1.414 1.414h-2.619v2h-2v2h-2v-2.17l5.636-5.626-1.417-1.407-6.219 6.203v5h6v-2h2v-2h2l1.729-1.729-1.696-1.685z"
+            ></path>
+          </svg>
+          <span>Log In</span>
+        </button>
+      </li>
+      <li>
+        <button>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.598 9h-1.055c1.482-4.638 5.83-8 10.957-8 6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5c-5.127 0-9.475-3.362-10.957-8h1.055c1.443 4.076 5.334 7 9.902 7 5.795 0 10.5-4.705 10.5-10.5s-4.705-10.5-10.5-10.5c-4.568 0-8.459 2.923-9.902 7zm12.228 3l-4.604-3.747.666-.753 6.112 5-6.101 5-.679-.737 4.608-3.763h-14.828v-1h14.826z"
+            ></path>
+          </svg>
+          <span>Sign Up</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</label>
+
     </div>
   </div>
+</nav>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>© 2025 Si tu barrio hablara - Historia individual</p>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    var map = L.map('map').setView([-34.6025, -58.3845], 16);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data © OpenStreetMap contributors'
-    }).addTo(map);
-    L.marker([-34.605828, -58.515664]).addTo(map)
-      .bindPopup("Mansion de beiro")
-      .openPopup();
-  </script>
+<!--ACA TERMINA LA NAVBAR Y EMPIEZA EL CODIGO-->
 
-</body>
+
+
+  <div class="row fila_filtro">
+
+</div>
+
+ <div class="row">
+  <div class="col-md-6">
+    <div class="card" style="max-width: 42em; border: 3px solid #6b3fa0;">
+
+  <div class="card-body">
+    <h5 class="card-title" style="color:blueviolet">LA MANSION DE BEIRO</h5>
+    <p class="card-text info_pag" style="color: rgb(233, 194, 255);">  La Mansión de Beiró, con su imponente fachada y jardines silenciosos, esconde mucho más que historia y arquitectura. Desde hace más de un siglo, quienes han cruzado sus umbríos pasillos hablan de presencias inexplicables y susurros que se arrastran con el viento, como si el tiempo mismo se negara a avanzar en sus habitaciones.
+
+Cuenta la leyenda que, en una noche tormentosa de 1923, la dueña original de la mansión, Doña Emilia Beiró, desapareció sin dejar rastro. Algunos vecinos relatan haber escuchado gritos desgarradores que provenían del ala oeste, hoy abandonada y clausurada. Desde entonces, la mansión comenzó a ganar fama de lugar maldito, donde la oscuridad parece tomar vida propia y las sombras se mueven con voluntad propia.
+
+Visitantes ocasionales aseguran haber visto figuras espectrales asomarse por las ventanas, siluetas translúcidas que desaparecen cuando se intenta acercar. Otros han sentido un frío intenso y una sensación de ser observados desde rincones invisibles. Se dice que las habitaciones en el segundo piso están congeladas en el tiempo, con muebles cubiertos de polvo y cortinas que se agitan sin viento.
+
+
+
+
+      
+      
+      
+     
+</p>
+    
+
+
+  </div>
+
+
+</div></div>
+
+<!-- Imagen a la derecha -->
+
+
+<div class="col-md-4 ">
+
+  <div class="card" id="derecha" style=" background-color: #434057; border: 3px solid #6b3fa0; ">
+    
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner" style="height: 18em;">
+        <div class="carousel-item active">
+          <img src="mansion_ventana.jpg" class="d-block w-100 h-100" alt="ventana" style="object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="mansion2.jpg" class="d-block w-100 h-100" alt="mansion2" style="object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img src="mansion.jpg" class="d-block w-100 h-100" alt="mansion" style="object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <p class="card-text" style="color: rgb(233, 194, 255);">
+       Sus muros esconden secretos oscuros y susurros del pasado. Quienes se atreven a acercarse sienten la presencia inquietante de sombras que nunca descansan.
+      </p>
+    </div>
+  
+  </div>       <!-- termina el card grande -->
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+    <footer class="custom-footer mt-5" >
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <h5 class="footer-title">Susurros Urbanos</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Sobre nosotros</a></li>
+          <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+          <li><a href="#" class="footer-link">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <h5 class="footer-title">Seguinos</h5>
+        <div class="social-icons">
+          <a href="#" class="footer-link me-3"><i class="bi bi-facebook"></i> Facebook</a>
+          <a href="#" class="footer-link me-3"><i class="bi bi-instagram"></i> Instagram</a>
+          <a href="#" class="footer-link"><i class="bi bi-twitter-x"></i> Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <small class="footer-copy">&copy; 2025 Susurros Urbanos. Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
 </html>

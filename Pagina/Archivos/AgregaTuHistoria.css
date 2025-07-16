@@ -563,7 +563,7 @@ background-color: #434057;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            width: 50%;
+            width: 30%;
             height: 3em;
             border: none;
             padding: 0px 20px;
@@ -574,7 +574,7 @@ background-color: #434057;
             border-radius: 10px;
             box-shadow: 5px 5px 0px rgb(148, 0, 247);
             transition-duration: .3s;
-            margin: 18% 15% 1em 40%;
+            margin: 18% 15% 1em 45%;
 }
 
 .svg {
@@ -622,7 +622,15 @@ background-color: #434057;
     .Btn{
         font-size: xx-small;
         padding-right: 50px;
-        margin-right: 6em;
+        margin-right:8px  ;
+    }
+
+    .titul{
+      font-size: medium;
+    }
+
+    .button{
+      font-size: 10px;
     }
 
 }
@@ -632,4 +640,38 @@ background-color: #434057;
     path{
         display: none;
     }
+
+}
+
+.custom-footer {
+  background-color: #2a2a2a;
+  color: #dcdcdc;
+  border-top: 3px solid #6b3fa0;
+  box-shadow: 0 -5px 20px rgba(169, 112, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
+  padding: 1.5em 0em 8.4em 0em;
+}
+
+.footer-title {
+  color: #a970ff;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.footer-link {
+  color: #dcdcdc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #a970ff;
+}
+
+.footer-copy {
+  color: #999;
+  font-size: 0.9em;
 }

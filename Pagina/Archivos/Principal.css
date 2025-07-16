@@ -1,10 +1,12 @@
-/* Fondo general oscuro */
 .body {
   background-color: #1c1b23; 
   overflow:scroll;
+    height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Filas 100% ancho */
 .row {
   width: 100%;
 }
@@ -16,7 +18,6 @@
     background-color: #3a2b4c;
 }
 
-/* Navbar: flex distribución y fondo tétrico */
 .generalnav {
   display: flex;
   flex-wrap: inherit;
@@ -26,43 +27,38 @@
   justify-content: space-between;
 }
 
-/* Título del sitio */
 .titulo {
-  color: #a970ff; /* morado claro */
+  color: #a970ff; 
   padding-right: 10%;
   padding-left: 3%;
 }
 
-/* Categorías link */
 .categorias {
-  color: #dcdcdc; /* gris claro */
+  color: #dcdcdc; 
   padding-right: 3%;
 }
 
-/* Botón de categorías */
 .paste-button {
   position: relative;
   display: block;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Botón principal */
 .button {
-  background-color: #2a2a2a; /* gris oscuro */
-  color: #d0c7e2; /* violeta muy claro */
+  background-color: #2a2a2a;
+  color: #d0c7e2; 
   padding: 10px 15px;
   font-size: 15px;
   font-weight: bold;
-  border: 3px solid #6b3fa0; /* morado */
+  border: 3px solid #6b3fa0;
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-/* Hover del botón principal */
 .button:hover {
-  background-color: #3a2b4c; /* morado profundo */
-  color: #ffffff; /* blanco */
+  background-color: #3a2b4c; 
+  color: #ffffff; 
 }
 
 /* Dropdown contenido */
@@ -398,7 +394,6 @@
 /* mapa*/
 
 #map {
-  width: 40em;
   height: 36em;
   border-radius: 15px;
   margin-top: 4em;
@@ -470,7 +465,9 @@ p{
 
 
 
-/* Barra al costado del mapa */
+
+.custom-footer{
+height: 20em;}
 
 .Btn {
   position: relative;
@@ -488,7 +485,7 @@ p{
   border-radius: 10px;
   box-shadow: 5px 5px 0px rgb(140, 32, 212);
   transition-duration: .3s;
-  margin: 5em 1em 10em 10em;
+  margin: 4em 4em 0em 15em;
 }
 
 .svg {
@@ -594,5 +591,42 @@ p{
   margin-left: 0em;
 }
 
+.burger{
+  margin-left: 50em;
+  
+}
 
+
+}
+.custom-footer {
+  background-color: #2a2a2a;
+  color: #dcdcdc;
+  border-top: 3px solid #6b3fa0;
+  box-shadow: 0 -5px 20px rgba(169, 112, 255, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto;
+  padding: 1.5em 0em 8.4em 0em;
+}
+
+.footer-title {
+  color: #a970ff;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.footer-link {
+  color: #dcdcdc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5em;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #a970ff;
+}
+
+.footer-copy {
+  color: #999;
+  font-size: 0.9em;
 }
