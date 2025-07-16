@@ -1,10 +1,7 @@
 .body {
   background-color: #1c1b23; 
   overflow:scroll;
-    height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+    
 }
 
 .row {
@@ -591,10 +588,12 @@ height: 20em;}
   margin-left: 0em;
 }
 
-.burger{
-  margin-left: 50em;
-  
-}
+h1{
+ display: block;
+    color: #a970ff;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    text-align: center;}
 
 
 }
@@ -629,4 +628,17 @@ height: 20em;}
 .footer-copy {
   color: #999;
   font-size: 0.9em;
+}
+
+h1{
+
+  display: none;
+}
+
+@media (max-width:290px) {
+  .navbar-toggler{
+    margin-top: -2em;
+    margin-left: 10em;
+  }
+  
 }
