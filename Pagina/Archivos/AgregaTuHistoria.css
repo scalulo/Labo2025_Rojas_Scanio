@@ -52,7 +52,6 @@
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-left: 6em;
 }
 
 .button:hover {
@@ -620,11 +619,7 @@ background-color: #434057;
 }
 
 @media(max-width:560px){
-    .Btn{
-        font-size: xx-small;
-        padding-right: 50px;
-        margin-right:8px  ;
-    }
+
 
     .titul{
       font-size: medium;
@@ -636,8 +631,12 @@ background-color: #434057;
 
 }
 
-@media(max-width:745px){
-
+@media(max-width:890px){
+    .Btn{
+        font-size: xx-small;
+        padding-right: 50px;
+        margin-right:8px  ;
+    }
     path{
         display: none;
     }
@@ -675,4 +674,186 @@ background-color: #434057;
 .footer-copy {
   color: #999;
   font-size: 0.9em;
+}
+
+
+/* estilos categorias de uiverse/*
+/* From Uiverse.io by chase2k25 */ 
+.glass-radio-group-vertical {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(51, 45, 85, 0.8);
+  padding: 1.5rem 1.2rem;
+  border: 2px solid #6b3fa0;
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+     overflow: hidden;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(169, 112, 255, 0.2);
+}
+
+@media (max-width: 560px) {
+  .glass-radio-group-vertical {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .glass-radio-group-vertical label {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width:785px) {
+  .glass-radio-group-vertical {
+    width: 11em;
+    margin: 0em 0em 1em -0.3em;  }
+}
+
+.glass-radio-group-vertical input {
+  display: none;
+}
+
+.glass-radio-group-vertical label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 200%;
+   
+  padding: 1rem 1.2rem ;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1em;
+  color: #e0d6ff;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.label-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radio-indicator {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #6b3fa0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
+  box-shadow: 0 0 0 2px transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkmark {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-glider-vertical {
+  position: absolute;
+  left: 0;
+  height: 56px;
+  width: 80%;
+  margin-left: 20px;
+  border-radius: 0.8rem;
+  z-index: 1;
+  transition:
+    transform 0.4s cubic-bezier(0.5, 1.6, 0.4, 1),
+    background 0.5s ease-in-out,
+    box-shadow 0.4s;
+}
+
+/* Categoría 1 - Tecnología */
+#glass-silver:checked ~ .glass-glider-vertical {
+  transform: translateY(0%);
+  background: linear-gradient(135deg, #6b3fa0, #a970ff);
+  box-shadow: 0 0 15px rgba(169, 112, 255, 0.6);
+}
+#glass-silver:checked + label {
+  color: white;
+}
+#glass-silver:checked + label .radio-indicator {
+  background: #a970ff;
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 8px #a970ff;
+}
+#glass-silver:checked + label .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Categoría 2 - Entretenimiento */
+#glass-gold:checked ~ .glass-glider-vertical {
+  transform: translateY(115%);
+  background: linear-gradient(135deg, #8a5fc7, #a970ff);
+  box-shadow: 0 0 15px rgba(169, 112, 255, 0.6);
+}
+#glass-gold:checked + label {
+  color: white;
+}
+#glass-gold:checked + label .radio-indicator {
+  background: #a970ff;
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 8px #a970ff;
+}
+#glass-gold:checked + label .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Categoría 3 - Educación */
+#glass-platinum:checked ~ .glass-glider-vertical {
+  transform: translateY(230%);
+  background: linear-gradient(135deg, #9d8bb5, #a970ff);
+  box-shadow: 0 0 15px rgba(169, 112, 255, 0.6);
+}
+#glass-platinum:checked + label {
+  color: white;
+}
+#glass-platinum:checked + label .radio-indicator {
+  background: #a970ff;
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 8px #a970ff;
+}
+#glass-platinum:checked + label .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Efectos de borde para el contenedor según la selección */
+.glass-radio-group-vertical:has(#glass-silver:checked) {
+  border-color: #a970ff;
+  box-shadow:
+    0 4px 20px rgba(169, 112, 255, 0.4),
+    inset 0 0 8px rgba(169, 112, 255, 0.3);
+}
+
+.glass-radio-group-vertical:has(#glass-gold:checked) {
+  border-color: #8a5fc7;
+  box-shadow:
+    0 4px 20px rgba(138, 95, 199, 0.4),
+    inset 0 0 8px rgba(138, 95, 199, 0.3);
+}
+
+.glass-radio-group-vertical:has(#glass-platinum:checked) {
+  border-color: #9d8bb5;
+  box-shadow:
+    0 4px 20px rgba(157, 139, 181, 0.4),
+    inset 0 0 8px rgba(157, 139, 181, 0.3);
 }

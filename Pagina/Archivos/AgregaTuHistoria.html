@@ -13,7 +13,7 @@
 
 
   <body class="body">
-<nav class=" navbar py-1 navbar-expand-lg  navbar-dark bg-dark " style="padding-right: 10%;  ">
+<nav class=" navbar py-1 navbar-expand-lg  navbar-dark bg-dark " style="padding-right: 10%; margin-bottom: 4em; ">
   <div class="container-fluid  ">
     <a class="navbar-brand titulo" href="Principal.html">Susurros Urbanos</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +24,8 @@
 
         <!-- From Uiverse.io by aadium --> 
 <div class="paste-button">
-  <button class="button">Categorias &nbsp; ▼</button>
-  <div class="dropdown-content">
+  <button class="button" style="margin-left: 6em;">Categorias &nbsp; ▼</button>
+  <div class="dropdown-content" style="margin-left: 90px;">
     <a id="top" href="#">Fantasmas</a>
     <a id="middle" href="#">Robos</a>
     <a id="bottom" href="#">Secuestros</a>
@@ -36,7 +36,7 @@
 
       </ul>
 
-      <form class="d-flex" role="search">
+      <form class="d-flex" action="guardar_historia.php" method="POST">
 <!-- From Uiverse.io by benjimich --> 
 <div class="container" style="padding-right: 300px; margin-left: 0em  ;padding-left: 0em;
 ">
@@ -123,23 +123,23 @@
 </nav>
 
 <div class="col-md-12">
-<div class="card" style="width: 55%; height: 2em; margin-bottom: 2em; background-color: #6b3fa0; margin-left: 20%;">
+<div class="card" style="width: 55%; max-width: 700px; margin: auto; background-color: #6b3fa0; margin-left: 20%;">
   <div class="card-body">
 
     <label class="titul">Contanos tu historia</label>
 
 
-    <form>
+    <form action="http://localhost:3000/insertar"  method="get">
   <div class="row mb-3">
     <label for="inputEmail3" class="coord-label">Titulo</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control " id="inputEmail3" placeholder="Ingresa un titulo espeluznante..">
+      <input type="text" class="form-control" name="titulo" id="inputEmail3" placeholder="Ingresa un titulo espeluznante..">
     </div>
   </div>
      <div class="comentario-group">
         <label for="comentarioInput" class="form-label titulo">Historia</label>
 <div class="mb-3">
-  <textarea class="form-control " id="comentarioInput" placeholder="Escribe tu historia..." rows="4"></textarea>
+  <textarea class="form-control " id="comentarioInput" name="cuerpo" placeholder="Escribe tu historia..." rows="4"></textarea>
 </div>      </div>
   <fieldset class="row mb-3 anonimo">
     <legend class="col-form-label col-sm-2 pt-0 " style=" color: #e0d6ff; font-size: 16px; font-weight: 700;"> Usuario</legend>
@@ -164,10 +164,10 @@
         <label class="coord-label">Coordenadas</label>
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" id="coord-input" placeholder="Latitud" aria-label="Latitud">
+            <input type="text" class="form-control" id="coord-input" name="latitud" placeholder="Latitud" aria-label="Latitud">
           </div>
           <div class="col">
-            <input type="text" class="form-control " id="coord-input" placeholder="Longitud" aria-label="Longitud">
+            <input type="text" class="form-control " id="coord-input" name="longitud" placeholder="Longitud" aria-label="Longitud">
           </div>
         </div>
       </div>
@@ -175,17 +175,38 @@
       
       <label class="coord-label" style="margin-top: 6%;">Categoria</label>
 
-      <div class="paste-button">
-  <button class="button" >Selecciona categoria &nbsp; ▼</button>
-  <div class="dropdown-content">
-    <a id="top" href="#">Fantasmas</a>
-    <a id="middle" href="#">Robos</a>
-    <a id="bottom" href="#">Secuestros</a>
-  </div>
+     <!-- From Uiverse.io by chase2k25 --> 
+<div class="glass-radio-group-vertical">  
+  <input checked="" id="glass-silver" name="categoria" type="radio" value="secuestros"/>
+  <label data-color="silver" for="glass-silver">
+    <span class="radio-indicator">
+      <span class="checkmark">✓</span>
+    </span>
+    <span class="label-text">Secuestros</span>
+  </label>
+
+  <input id="glass-gold" name="categoria" type="radio" value="robos"/>
+  <label data-color="gold" for="glass-gold">
+    <span class="radio-indicator">
+      <span class="checkmark">✓</span>
+    </span>
+    <span class="label-text">Robos</span>
+  </label>
+
+  <input id="glass-platinum" name="categoria" type="radio" value="fantasmas" />
+  <label data-color="platinum" for="glass-platinum">
+    <span class="radio-indicator">
+      <span class="checkmark">✓</span>
+    </span>
+    <span class="label-text">Fantasmas</span>
+  </label>
+
+  <div class="glass-glider-vertical"></div>
 </div>
 
+
 <div>
-          <button class="Btn">Agregar 
+          <button type="submit" class="Btn">Agregar 
       <svg class="svg  " viewBox="0 0 512 512">
         <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path></svg>
     </button>
@@ -193,7 +214,7 @@
         
       </ul>
 
-      <form class="d-flex" role="search">
+
 
 
     </div>
