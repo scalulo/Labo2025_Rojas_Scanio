@@ -32,6 +32,9 @@ private HashMap<Integer, Ciudadano> mapa;
         if(mapa.containsKey(dni)){
             mapa.get(dni).mostrar_historial();
         }
+        else{
+            System.out.println("Ese dni no esta registrado");
+        }
 
     }
 
@@ -65,6 +68,7 @@ private HashMap<Integer, Ciudadano> mapa;
     }
 
     public void se_dieron(Vacuna vacuna){
+
         for(Ciudadano c: mapa.values()){
                 if(c.getHistorial().contains(vacuna)){
                     System.out.println("Se la dio el ciudadano con dni:" +c.getDni());
@@ -74,9 +78,11 @@ private HashMap<Integer, Ciudadano> mapa;
     }
 
     public static void main(String[] args) {
+
         Ciudadano c1=new Ciudadano();
         Vacuna v1=new Vacuna();
         Sistema s1=new Sistema();
+
         s1.registrar_vacuna(v1,22418304);
         s1.consultar_historial(22418302);
         System.out.println(s1.cantidad_por_provincia());
