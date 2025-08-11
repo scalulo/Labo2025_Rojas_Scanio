@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ej3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form  class="form" >
+            <input type="text" class="input" id="nombre" placeholder="Name">
+            <input type="number" class="input" id="telefono" placeholder="telefono">
+            <input type="number" class="input" id="edad"  placeholder="edad">
+            <input type="text" class="input"  id="apellido" placeholder="apellido">
+            <input type="password" class="input"  id="contraseña" placeholder="contraseña">
+
+            <button type="button" onclick="probar()" class="btn"> enviarr</button>
+            </form>
+
+            <div id="tabla"></div>
+</body>
+
+<script>
+
+function espacio(nomb){
+    for(let i=0;i<nomb.length;i++){
+        if(nomb[i]== " "){
+            return true;
+        }
+    }
+    return false;
+}
+
+function probar(){
+const nom=$("#nombre").val();
+const tel=$("#telefono").val();
+const edad=$("#edad").val();
+const apell=$("#apellido").val();
+const contra=$("#contraseña").val();
+console.log(nom,tel,edad,apell,contra);
+
+
+if(nom== "" || espacio(nom)){
+    alert("nombre mal!!");
+}
+
+else if(apell== "" || espacio(apell)){
+alert("apellido mal!!");
+}
+else if(contra==nom|| contra==apell || contra.length<6){
+alert("contraseñ mal!!");
+}
+else if (edad>120){
+    alert("sos mas viejo que los dinosaurios");
+}
+else if(tel.length!=10){
+    alert("telefono invalido");
+}
+
+else{
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
+
+const row1 = document.createElement('tr');
+tbody.appendChild(row1);
+const row2 = document.createElement('tr');
+tbody.appendChild(row1);
+const row3 = document.createElement('tr');
+tbody.appendChild(row1);
+const row4 = document.createElement('tr');
+tbody.appendChild(row1);
+const row5 = document.createElement('tr');
+tbody.appendChild(row1);
+
+const txt1 = document.createElement('td');
+const txt2 = document.createElement('td');
+const txt3 = document.createElement('td');
+const txt4 = document.createElement('td');
+const txt5 = document.createElement('td');
+
+
+txt1.textContent = nom;
+txt2.textContent = apell;
+txt3.textContent = tel;
+txt4.textContent = edad;
+txt5.textContent = contra;
+
+row1.appendChild(txt1);
+row2.appendChild(txt2);
+row3.appendChild(txt3);
+row4.appendChild(txt4);
+row5.appendChild(txt5);
+
+tbody.appendChild(row1);
+tbody.appendChild(row2);
+tbody.appendChild(row3);
+tbody.appendChild(row4);
+tbody.appendChild(row5);
+
+table.appendChild(tbody);
+
+
+
+const container=document.getElementById("tabla");
+container.innerHTML="";
+container.appendChild(table);
+
+
+}
+
+}
+</script>
+
+</html>

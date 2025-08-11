@@ -1,0 +1,32 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="stylesheet" href="ej1.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="div"> <button onclick="cambiar()"> boton</button></div>
+
+        <form id="formulario">
+    <label for="hexa">Hexa:</label>
+    <input type="text" id="hexa" name="hexa"><br><br>
+    <button type="button" onclick="obtenerDatos()">Enviar</button>
+    </form>
+
+    <script>
+        const div= document.getElementById("div");
+    function obtenerDatos() {
+        let color = document.getElementById("hexa").value;
+        if (color == "" || color[0]!= "#" || color.length != 7 ) {
+    alert("!");
+    }
+    else{
+        div.style.backgroundColor=color;
+    }
+    }
+    </script>
+    </body>
+
+    </html>

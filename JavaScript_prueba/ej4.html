@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ej4.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <form id="formulario">
+    <label for="hexa">Elemento a agregar:</label>
+    <input type="text" id="elemento" name="elemento"><br><br>
+    <button type="button" onclick="agregar()">Enviar</button>
+   </form>
+
+    <ul id="lista">
+      <!-- Los elementos con botón eliminar se agregan acá -->
+    </ul>
+
+</body>
+<script>
+function agregar(){
+    let input = document.getElementById("elemento");
+    let elemento = input.value.trim();
+    let lista = document.getElementById("lista");
+
+   
+   
+    if(elemento !== ""){
+        let nuevo = document.createElement('li');
+
+        
+
+        let btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.style.marginLeft = '10px';
+
+        btnEliminar.onclick = function() {
+            lista.removeChild(nuevo);
+        };
+
+        nuevo.appendChild(texto);
+        nuevo.appendChild(btnEliminar);
+
+        lista.insertBefore(nuevo, lista.firstChild);
+
+        input.value = '';
+        input.focus();
+    }
+}
+</script>
+
+</html>
