@@ -52,20 +52,31 @@ public class Sistema {
     public int calcularTotalCompra(Compra compra) {
         int total = 0;
 
-        for (Componente comp : compra.getCpu().getComponentes()) {
-            total += comp.getPrecio();
+        try {
+            for (Componente c : compra.getCpu().getComponentes()){
+                if (c.getStock()==0){
+                    throw new IllegalArgumentException("no hay stock de" + c.getNombre());
+                }
+            }
+            for (Componente comp : compra.getCpu().getComponentes()) {
+                total += comp.getPrecio();
+            }
+
+            for (Dispositivo_entrada de : compra.getDisp_entrada()) {
+                total += de.getPrecio();
+            }
+
+            for (Dispositivo_salida ds : compra.getDisp_salida()) {
+                total += ds.getPrecio();
+            }
+            System.out.println("El total de tu compra es: "+total);
+            compra.setTotal(total);
+            return total;
+        }catch (IllegalArgumentException e){
+            System.err.println(e);
+            return 0;
         }
 
-        for (Dispositivo_entrada de : compra.getDisp_entrada()) {
-            total += de.getPrecio();
-        }
-
-        for (Dispositivo_salida ds : compra.getDisp_salida()) {
-            total += ds.getPrecio();
-        }
-        System.out.println("El total de tu compra es: "+total);
-        compra.setTotal(total);
-        return total;
     }
 
 

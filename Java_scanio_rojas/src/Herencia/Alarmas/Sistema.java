@@ -1,6 +1,8 @@
 package Herencia.Alarmas;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Sistema {
     private ArrayList<Dispositivo> dispositivos;
@@ -38,6 +40,30 @@ public class Sistema {
         dispositivos.add(senso);
     }
 
+    public Dispositivo obtener_info(){
+        Scanner sc = new Scanner(System.in);
+
+
+        try {
+            System.out.println("Elige un numero desde el 0 hasta el: " + dispositivos.size());
+            int numero = sc.nextInt();
+
+            return dispositivos.get(numero);
+
+        }
+
+        catch(IndexOutOfBoundsException g) {
+            System.err.println("El numero esta fuera del rango");
+            obtener_info();
+        }
+        catch (InputMismatchException h){
+            System.err.println("Tenes que ingresar un numero entero");
+            obtener_info();
+
+        }
+return null;
+    }
+
     public static void main(String[] args) {
         Sistema sistema1=new Sistema();
 
@@ -53,6 +79,7 @@ public class Sistema {
         sistema1.agregarSensores(sensorTemperatura1);
 
         sistema1.alarma();
+
 
 
 

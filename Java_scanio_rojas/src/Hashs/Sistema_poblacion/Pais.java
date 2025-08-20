@@ -41,5 +41,10 @@ public class Pais extends Lugar {
     void eliminar(Lugar lugar) {
         provincias.remove(lugar);
     }
+
+    @Override
+    void modificar() {
+
+    }
 }
 

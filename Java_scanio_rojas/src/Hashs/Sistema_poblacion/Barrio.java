@@ -32,4 +32,9 @@ public  class Barrio extends Lugar{
     void eliminar(Lugar lugar) {
 
     }
+
+    @Override
+    void modificar() {
+
+    }
 }

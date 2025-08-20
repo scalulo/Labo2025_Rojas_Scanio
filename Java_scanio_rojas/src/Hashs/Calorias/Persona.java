@@ -40,11 +40,14 @@ public class Persona {
         this.platos = platos;
     }
 
-    public int calorias_totales(){
-        Integer t_calorias=0;
-        for(Integer calorias: platos.values()){
-                t_calorias+=calorias;
+    public int calorias_totales() {
+        int t_calorias = 0;
+        for (HashMap.Entry<Plato, Integer> entry : platos.entrySet()) {
+            Plato plato = entry.getKey();
+            int cantidad = entry.getValue();
+            t_calorias += plato.getCalorias() * cantidad;
         }
         return t_calorias;
     }
+
 }

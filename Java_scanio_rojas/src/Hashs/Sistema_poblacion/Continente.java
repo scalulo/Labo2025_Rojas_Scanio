@@ -43,5 +43,10 @@ public class Continente extends Lugar{
     void eliminar(Lugar lugar) {
         paises.remove(lugar);
     }
+
+    @Override
+    void modificar() {
+
+    }
 }
 

@@ -39,5 +39,10 @@ public  class Provincia extends Lugar{
     void eliminar(Lugar lugar) {
         ciudades.remove(lugar);
     }
+
+    @Override
+    void modificar() {
+
+    }
 }
 
