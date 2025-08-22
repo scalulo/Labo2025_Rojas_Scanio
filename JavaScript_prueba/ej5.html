@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ej5.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Datos</h1>
+<button onclick="cargarDatos()"> Cargar datos </button>
+
+<div id="tabla"> </div>
+
+<script>
+
+async function cargarDatos() {
+      const url =  "https://potterapi-fedeperin.vercel.app/es/characters"; 
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Error HTTP: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        let contenedor = document.getElementById("tabla");
+
+         result.forEach(function(Personaje) {
+            let card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+            <div class="card">
+             <img src="${Personaje.image}" alt="${Personaje.interpretedBy}">
+
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div class="card__content">
+                <p class="card__title">${Personaje.nickname}
+                </p><p class="card__description">${Personaje.interpretedBy}</p>
+            </div>
+            </div>
+
+    
+            `;
+
+            contenedor.appendChild(card);
+        });
+
+
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+
+</script>
+
+</body>
+</html>
