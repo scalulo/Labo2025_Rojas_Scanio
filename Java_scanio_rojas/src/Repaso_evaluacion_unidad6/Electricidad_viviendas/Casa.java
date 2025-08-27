@@ -35,4 +35,9 @@ public class Casa extends Vivienda{
     public static void setPrecio(int precio) {
         Casa.precio = precio;
     }
+
+    @Override
+    Integer cuanto_pago(Integer consumido) {
+        return consumido*precio;
+    }
 }
