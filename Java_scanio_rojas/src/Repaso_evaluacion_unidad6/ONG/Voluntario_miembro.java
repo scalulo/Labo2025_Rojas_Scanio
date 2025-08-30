@@ -6,6 +6,7 @@ public class Voluntario_miembro extends Integrante_ong {
     public Voluntario_miembro(String nombre, int edad, String direccion, String apellido, int codigo_postal, boolean contribuir, int puntaje) {
         super(nombre, edad, direccion, apellido, codigo_postal, contribuir);
         this.puntaje = puntaje;
+
     }
 
     public int getPuntaje() {
@@ -14,5 +15,10 @@ public class Voluntario_miembro extends Integrante_ong {
 
     public void setPuntaje(int puntaje) {
         this.puntaje = puntaje;
+    }
+
+    @Override
+    void accion_solidaria() {
+        System.out.println("ofrezco ayuda");
     }
 }

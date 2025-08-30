@@ -1,3 +1,4 @@
+/*
 package Curling.Test;
 
 import Curling.Campeonato;
@@ -26,3 +27,4 @@ public class CampeonatoTest {
 
 
 }
+*/

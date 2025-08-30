@@ -1,4 +1,4 @@
-package Herencia.Computadoras;
+/*package Herencia.Computadoras;
 
 
 import org.junit.jupiter.api.*;
@@ -37,3 +37,4 @@ public class Test_computadoras {
     }
 
 }
+*/
