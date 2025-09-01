@@ -1,5 +1,6 @@
 package Repaso_evaluacion_unidad6.ONG;
 
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.UpperCase;
 import org.junit.runner.manipulation.Alphanumeric;
 
 import java.time.LocalDate;
@@ -13,8 +14,15 @@ public class Administrador extends Rol_sueldo{
         super(nombre, edad, direccion, apellido, codigo_postal, contribuir, sueldo, dia_cobro, banco, fecha_de_alta_en_empresa);
         this.codigo = codigo;
         this.user = user;
+
+
+
+
+
         this.contra = contra;
     }
+
+
 
     public Alphanumeric getCodigo() {
         return codigo;
