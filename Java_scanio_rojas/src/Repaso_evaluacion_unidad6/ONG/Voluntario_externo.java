@@ -1,13 +1,24 @@
 package Repaso_evaluacion_unidad6.ONG;
 
+import java.util.Set;
+
 public class Voluntario_externo extends Integrante_ong {
     private String nom_instituncion;
     private String dire_instituncion;
+    private static Set<String> barrios=Set.of("Coghlan", "Palermo", "Barracas", "Parque Patricios", "Retiro", "Saavedra");
 
     public Voluntario_externo(String nombre, int edad, String direccion, String apellido, int codigo_postal, boolean contribuir, String nom_instituncion, String dire_instituncion) {
         super(nombre, edad, direccion, apellido, codigo_postal, contribuir);
         this.nom_instituncion = nom_instituncion;
         this.dire_instituncion = dire_instituncion;
+    }
+
+    public static Set<String> getBarrios() {
+        return barrios;
+    }
+
+    public static void setBarrios(Set<String> barrios) {
+        Voluntario_externo.barrios = barrios;
     }
 
     public String getNom_instituncion() {
@@ -24,5 +35,10 @@ public class Voluntario_externo extends Integrante_ong {
 
     public void setDire_instituncion(String dire_instituncion) {
         this.dire_instituncion = dire_instituncion;
+    }
+
+    @Override
+    void accion_solidaria() {
+        System.out.println("ofrezco ayuda");
     }
 }

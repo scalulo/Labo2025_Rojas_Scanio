@@ -27,4 +27,9 @@ public class Profesor extends Rol_sueldo{
     public void setMaterias_horas(HashMap<String, Integer> materias_horas) {
         this.materias_horas = materias_horas;
     }
+
+    @Override
+    void accion_solidaria() {
+
+    }
 }

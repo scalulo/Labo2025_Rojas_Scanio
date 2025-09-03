@@ -1,8 +1,9 @@
 package Repaso_evaluacion_unidad6.ONG;
 
 import java.time.LocalDate;
+import java.time.Year;
 
-public class Rol_sueldo extends Integrante_ong{
+public abstract class Rol_sueldo extends Integrante_ong{
     private int sueldo;
     private int dia_cobro;
     private Banco banco;
@@ -47,5 +48,12 @@ public class Rol_sueldo extends Integrante_ong{
 
     public void setFecha_de_alta_en_empresa(LocalDate fecha_de_alta_en_empresa) {
         this.fecha_de_alta_en_empresa = fecha_de_alta_en_empresa;
+    }
+
+    public String mayor_2_años(){
+        if (LocalDate.now().minusYears(2).isBefore(fecha_de_alta_en_empresa) ){
+            return getNombre();
+        }
+        return "el empleado esta hace menos d dos años";
     }
 }
