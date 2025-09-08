@@ -57,7 +57,8 @@ public class Bar {
         this.acumulables = acumulables;
     }
 
-    public int cant_tragos(){
-        return beneficios_implemenables.
+    public int contarBeneficiosTragos() {
+        return beneficios_implemenables.size() - acumulables.size();
     }
+
 }
