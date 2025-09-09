@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Sistema {
-    private static HashMap<Membresia, Integer> nivel_prestamo = nivel_prestamo_Creacion();//relacion nivel/cant presatmo
+    private static HashMap<Membresia, Integer> nivel_prestamo = Sistema.nivel_prestamo_Creacion();//relacion nivel/cant presatmo
 
     public static HashMap<Membresia, Integer> nivel_prestamo_Creacion(){
         HashMap<Membresia, Integer>nivel_prestamo=new HashMap<Membresia, Integer>();
@@ -48,14 +48,17 @@ public class Sistema {
     }
 
     public boolean verificar_nivel_usuario (Usuario usuario){
-        for (Membresia nivel : nivel_prestamo.keySet()){
+
+        return  !(usuario.getPrestamos().size()>=nivel_prestamo.get(usuario.getNivel()));
+
+       /* for (Membresia nivel : nivel_prestamo.keySet()){
             if (nivel.equals(usuario.getNivel())){
                 if (usuario.getPrestamos().size()>=nivel_prestamo.get(nivel)){
                   return false;
                 }
             }
         }
-        return true;
+        return true;*/
     }
 
     public boolean verificar_libro(Libro_electronico libro){
