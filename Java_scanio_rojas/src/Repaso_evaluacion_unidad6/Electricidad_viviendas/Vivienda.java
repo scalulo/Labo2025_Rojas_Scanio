@@ -10,6 +10,7 @@ public abstract class Vivienda {
     private Dueño dueño;
     private HashMap<Year,HashMap<Month,Integer>> almacenamiento;
 
+
     public Vivienda(){
         this.direccion="Baunes 2121";
         this.codigo_postal=2;
