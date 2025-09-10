@@ -3,54 +3,54 @@ package objetos;
 import java.time.LocalDate;
 
 public abstract class Persona {
-    private int dni;
-    private int edad;
-    private String nombre;
-    private LocalDate fechaNacimiento;
+    private int documento;
+    private int anios;
+    private String apodo;
+    private LocalDate nacimiento;
 
-
-    public Persona(int dni, int edad, String nombre, LocalDate fechaNacimiento) {
-        this.dni = dni;
-        this.edad = edad;
-        this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
+    public Persona(int documento, int anios, String apodo, LocalDate nacimiento) {
+        this.documento = documento;
+        this.anios = anios;
+        this.apodo = apodo;
+        this.nacimiento = nacimiento;
     }
+
     public Persona() {
-        this.dni = 1991919;
-        this.edad = 19;
-        this.nombre = "juan";
-        this.fechaNacimiento = LocalDate.now();
+        this.documento = 1991919;
+        this.anios = 19;
+        this.apodo = "juan";
+        this.nacimiento = LocalDate.now();
     }
 
-    public int getDni() {
-        return dni;
+    public int getDocumento() {
+        return documento;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    public void setDocumento(int documento) {
+        this.documento = documento;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getAnios() {
+        return anios;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setAnios(int anios) {
+        this.anios = anios;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getApodo() {
+        return apodo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
     }
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
+    public LocalDate getNacimiento() {
+        return nacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setNacimiento(LocalDate nacimiento) {
+        this.nacimiento = nacimiento;
     }
 }
