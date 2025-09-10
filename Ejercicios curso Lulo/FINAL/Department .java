@@ -3,78 +3,76 @@ package objetos;
 import java.util.ArrayList;
 
 public class Department {
-    private String name;
-    private ArrayList<Employe>employes = new ArrayList<>();
-    private int ultimoempleadoagregadoIndex= -1;
+    private String deptName;
+    private ArrayList<Employe> staffList = new ArrayList<>();
+    private int lastAddedIndex = -1;
 
-    public Department(String name, ArrayList<Employe> employes) {
-        this.name = name;
-        this.employes = employes;
+    public Department(String deptName, ArrayList<Employe> staffList) {
+        this.deptName = deptName;
+        this.staffList = staffList;
     }
 
-    public String getName() {
-        return name;
+    public String getDeptName() {
+        return deptName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
     }
 
-    public ArrayList<Employe> getEmployes() {
-        return employes;
+    public ArrayList<Employe> getStaffList() {
+        return staffList;
     }
 
-    public void setEmployes(ArrayList<Employe> employes) {
-        this.employes = employes;
+    public void setStaffList(ArrayList<Employe> staffList) {
+        this.staffList = staffList;
     }
 
-    public void addEmp(Employe anEmployee){
-        if(ultimoempleadoagregadoIndex<employes.size()){
-            ultimoempleadoagregadoIndex++;
-            employes.add(anEmployee);
+    public void addWorker(Employe newWorker) {
+        if (lastAddedIndex < staffList.size()) {
+            lastAddedIndex++;
+            staffList.add(newWorker);
         }
     }
 
-
-    public ArrayList<Employe> getEmploye(){
-        ArrayList<Employe> actualizarEmpleados = new ArrayList<>();
-
-        for (Employe e: employes){
-            actualizarEmpleados.add(e);
+    public ArrayList<Employe> getAllWorkers() {
+        ArrayList<Employe> updatedList = new ArrayList<>();
+        for (Employe worker : staffList) {
+            updatedList.add(worker);
         }
-        return actualizarEmpleados;
+        return updatedList;
     }
 
-    public int getEmployescount(){
-        return ultimoempleadoagregadoIndex+1;
+    public int countWorkers() {
+        return lastAddedIndex + 1;
     }
 
-    public Employe getEmployeeById(int empId){
-        for(Employe e: employes){
-
-            if(empId==e.getID()){
-                return e;
+    public Employe findWorkerById(int workerId) {
+        for (Employe worker : staffList) {
+            if (workerId == worker.getID()) {
+                return worker;
             }
         }
         return null;
     }
 
-
-    public double getTotalSalary(){
-        double totalSalario=0.0;
-        for (Employe e: employes){
-            totalSalario+=e.getSalary();
+    public double calculateTotalSalary() {
+        double totalPay = 0.0;
+        for (Employe worker : staffList) {
+            totalPay += worker.getSalary();
         }
-        return totalSalario;
+        return totalPay;
     }
 
-    public double getAverageSalary(){
-        if(ultimoempleadoagregadoIndex>-1){
-            return getTotalSalary()/employes.size();
+    public double calculateAverageSalary() {
+        if (lastAddedIndex > -1) {
+            return calculateTotalSalary() / staffList.size();
         }
         return 0.0;
     }
-    public String toString(){
-        return name;
+
+    @Override
+    public String toString() {
+        return deptName;
     }
 }
