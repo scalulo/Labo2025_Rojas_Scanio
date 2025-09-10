@@ -1,4 +1,5 @@
 package objetos;
+
 import io.helidon.webserver.Routing;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -7,72 +8,55 @@ import io.helidon.webserver.WebServer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ShopNew
+public class Shop {
+    public static void main(String[] args) {
+        System.out.println("Welcome to duke choice shop");
 
-{
-        public static void main(String[] args) {
-            System.out.println("Welcome to duke choice shop");
-            double tax = 1.2;
-            double total = 0.0;
-            double promedio =0.0;
-            ClothingNew item1 = new ClothingNew("Blue Jacket", 20.9, 'm');
-            ClothingNew item2 = new ClothingNew("Orange T-shirt", 10.5, 's');
-            ClothingNew item4 = new ClothingNew("Green scarf", 15.5, 's');
-            ArrayList<ClothingNew>items=new ArrayList<>();
-            CustomerNew c1 = new CustomerNew();
-            items.add(item1);
-            items.add(item2);
-            items.add(item4);
+        Clothing garment1 = new Clothing("Blue Jacket", 20.9, 'm');
+        Clothing garment2 = new Clothing("Orange T-shirt", 10.5, 's');
+        Clothing garment3 = new Clothing("Green scarf", 15.5, 's');
 
-            c1.setNombre("pinky");
-            c1.setSize('s');
-            System.out.println("Hello"+c1.getNombre());
-            Arrays.sort(new ArrayList[]{c1.getItems()});
-            try {
-                Itemlist list = new Itemlist(items);
-                Routing routing = Routing.builder()
-                    .get("/items",list).build();
-                ServerConfiguration config = ServerConfiguration.builder()
-                        .bindAddress(InetAddress.getLocalHost())
-                        .port(8888).build();
-                WebServer ws = WebServer.create(config,routing);
-                ws.start();
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-                throw new RuntimeException(e);
-            }
+        ArrayList<Clothing> stock = new ArrayList<>();
+        Customer customer1 = new Customer();
 
+        stock.add(garment1);
+        stock.add(garment2);
+        stock.add(garment3);
 
-            for (ClothingNew i: c1.getItems()){
-                System.out.println("Iteam 1 datos:"+" "+i.getDescription()+" "+ i.getPrice()+ " "+i.getSize());
-            }
+        customer1.setApodo("pinky");
+        customer1.setMeasurement('s');
 
+        System.out.println("Hello " + customer1.getApodo());
 
+        Arrays.sort(new ArrayList[]{customer1.getPurchases()});
 
-
-
-            int mesurement = 3;
-            c1.setSize(mesurement);
-            //switch(mesurement){
-              //  case 1,2,3:
-                //    c1.setSize('s');
-                  //  break;
-
-                //case 4, 5, 6:
-                  //  c1.setSize('m');
-                   // break;
-                //case 7, 8 ,9:
-                  //  c1.setSize('l');
-                  //  break;
-               // default:
-                 //   c1.setSize('x');
-            //}
-           
-        c1.addItems(items);
-
-
-
-            System.out.println("total="+ c1.getTotalClothingCost()+" "+"y el promedio fue:"+c1.getPromedioClothingCost());
-
+        try {
+            Itemlist list = new Itemlist(stock);
+            Routing routing = Routing.builder()
+                    .get("/items", list).build();
+            ServerConfiguration config = ServerConfiguration.builder()
+                    .bindAddress(InetAddress.getLocalHost())
+                    .port(8888).build();
+            WebServer ws = WebServer.create(config, routing);
+            ws.start();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+
+        for (Clothing piece : customer1.getPurchases()) {
+            System.out.println("Datos de prenda: " +
+                    piece.getItemName() + " " +
+                    piece.getCost() + " " +
+                    piece.getMeasurement());
+        }
+
+        int value = 3;
+        customer1.setMeasurement(value);
+
+        customer1.addPurchases(stock);
+
+        System.out.println("Total = " + customer1.calculateTotalCost() +
+                " y el promedio fue: " + customer1.calculateAverageCost());
     }
+}
