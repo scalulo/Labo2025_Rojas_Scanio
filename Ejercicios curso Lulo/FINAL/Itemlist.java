@@ -1,40 +1,37 @@
 package objetos;
+
 import io.helidon.common.http.Http;
 import io.helidon.webserver.Handler;
 import io.helidon.webserver.ServerRequest;
 import io.helidon.webserver.ServerResponse;
 
 import java.util.ArrayList;
-import java.util.function.BiConsumer;
 
-public class Itemlist  implements Handler {
-    private ArrayList<ClothingNew>items;
+public class Itemlist implements Handler {
+    private ArrayList<Clothing> catalog;
 
-    public Itemlist(ArrayList<ClothingNew> items) {
-        this.items = items;
+    public Itemlist(ArrayList<Clothing> catalog) {
+        this.catalog = catalog;
     }
 
-    public ArrayList<ClothingNew> getItems() {
-        return items;
+    public ArrayList<Clothing> getCatalog() {
+        return catalog;
     }
 
-    public void setItems(ArrayList<ClothingNew> items) {
-        this.items = items;
+    public void setCatalog(ArrayList<Clothing> catalog) {
+        this.catalog = catalog;
     }
 
     @Override
-    public void accept(ServerRequest serverRequest, ServerResponse serverResponse) {
-        serverResponse.status(Http.Status.OK_200);
-        serverResponse.headers().put("Content Type","text/plain: charset=UTF-8");
-        StringBuilder result = new StringBuilder();
-        for (ClothingNew i: items){
-            result.append(i+"/n");
+    public void accept(ServerRequest req, ServerResponse res) {
+        res.status(Http.Status.OK_200);
+        res.headers().put("Content-Type", "text/plain; charset=UTF-8");
 
-
+        StringBuilder output = new StringBuilder();
+        for (Clothing piece : catalog) {
+            output.append(piece).append("\n");
         }
-        serverResponse.send(result);
+
+        res.send(output.toString());
     }
-
-
-
 }
