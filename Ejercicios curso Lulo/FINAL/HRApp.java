@@ -6,25 +6,24 @@ public class HRApp {
     public static void main(String[] args) {
         System.out.println("HRApp Starts");
 
-        Employe e1 = new Employe(1001010, "toto",100000);
-        Employe e2 = new Employe(1091919,"juan",90000);
+        Employee emp1 = new Employee(1001010, "toto", 100000);
+        Employee emp2 = new Employee(1091919, "juan", 90000);
 
+        Department dept = new Department("Education", new ArrayList<>());
+        dept.addWorker(emp1);
+        dept.addWorker(emp2);
 
+        System.out.println("Emp " + emp1);
+        System.out.println("Emp " + emp2);
 
-        Department dept = new Department("Education",new ArrayList<>());
-        dept.addEmp(e1);
-        dept.addEmp(e2);
+        ArrayList<Employee> workers = dept.getAllWorkers();
 
-
-        System.out.println("Emp"+e1);
-        System.out.println("Emp"+e2);
-        ArrayList<Employe>emps=dept.getEmploye();
-
-        for (Employe e: emps){
-            System.out.println("Emp"+e);
+        for (Employee emp : workers) {
+            System.out.println("Emp " + emp);
         }
-        System.out.println("Total"+dept.getTotalSalary());
-        System.out.println("Promedio"+dept.getAverageSalary());
-        System.out.println("Emp"+dept.getEmployeeById(1001010));
+
+        System.out.println("Total " + dept.calculateTotalSalary());
+        System.out.println("Promedio " + dept.calculateAverageSalary());
+        System.out.println("Emp " + dept.findWorkerById(1001010));
     }
 }
