@@ -1,62 +1,53 @@
 package objetos;
 
-public class ClothingNew implements Comparable<ClothingNew>
+public class Clothing implements Comparable<Clothing> {
 
-{
+    private String itemName;
+    private double cost;
+    private char measurement = 's';
+    private final double baseTax = 1.2;
+    private final int minCost = 10;
 
-        private String description;
-        private double price;
-        private char size='s';
-        private final double min_tax=1.2;
-        private final int min_price=10;
+    public Clothing(String itemName, double cost, char measurement) {
+        this.itemName = itemName;
+        this.cost = cost;
+        this.measurement = measurement;
+    }
 
-        public ClothingNew(String description, double price, char size){
-                this.description=description;
-                this.price=price;
-                this.size=size;
+    public String getItemName() {
+        return itemName;
+    }
 
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public double getCost() {
+        cost = cost * baseTax;
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        if (cost < minCost) {
+            cost = minCost;
         }
+        this.cost = cost;
+    }
 
-        public String getDescription() {
-                return description;
-        }
+    public char getMeasurement() {
+        return measurement;
+    }
 
-        public void setDescription(String description) {
-                this.description = description;
-        }
+    public void setMeasurement(char measurement) {
+        this.measurement = measurement;
+    }
 
-        public double getPrice() {
-                price = price * min_tax;
-                return price;
-        }
+    public static void main(String[] args) {
 
-        public void setPrice(double price) {
-                if(price<min_price) {
-                        price = min_price;
-                }
-                this.price = price;
-        }
+    }
 
-        public char getSize() {
-                return size;
-        }
-
-        public void setSize(char size) {
-                this.size = size;
-        }
-
-        public static void main(String[] args) {
-
-          
-
-
-          
-        }
-
-        @Override
-        public int compareTo(ClothingNew o) {
-                return this.description.compareTo(o.description);
-        }
-
-
+    @Override
+    public int compareTo(Clothing other) {
+        return this.itemName.compareTo(other.itemName);
+    }
 }
