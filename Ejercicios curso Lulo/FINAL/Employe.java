@@ -1,42 +1,42 @@
 package objetos;
 
-public class Employe {
-    private int ID;
-    private String name;
-    private double salary;
+public class Employee {
+    private int empCode;
+    private String fullName;
+    private double payRate;
 
-
-    public Employe(int ID, String name, double salary) {
-        this.ID = ID;
-        this.name = name;
-        this.salary = salary;
+    public Employee(int empCode, String fullName, double payRate) {
+        this.empCode = empCode;
+        this.fullName = fullName;
+        this.payRate = payRate;
     }
 
-    public int getID() {
-        return ID;
+    public int getEmpCode() {
+        return empCode;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setEmpCode(int empCode) {
+        this.empCode = empCode;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public double getSalary() {
-        return salary;
+    public double getPayRate() {
+        return payRate;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setPayRate(double payRate) {
+        this.payRate = payRate;
     }
 
-    public String toString(){
-        return "Employee"+ getID() + " " + getName() + " " + getSalary();
+    @Override
+    public String toString() {
+        return "Employee " + getEmpCode() + " " + getFullName() + " " + getPayRate();
     }
 }
