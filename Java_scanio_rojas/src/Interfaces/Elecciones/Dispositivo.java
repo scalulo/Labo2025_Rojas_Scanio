@@ -1,6 +1,6 @@
 package Interfaces.Elecciones;
 
-public class Dispositivo {
+public abstract class Dispositivo {
     private int numero_serie;
     private String fabricante;
     private String modelo;

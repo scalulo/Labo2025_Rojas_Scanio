@@ -1,6 +1,6 @@
 package Interfaces.Elecciones;
 
-public class Ave {
+public abstract class Ave {
     private String nombre;
     private String color;
     private String especie;
