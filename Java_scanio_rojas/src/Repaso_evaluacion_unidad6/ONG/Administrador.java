@@ -23,7 +23,7 @@ public class Administrador extends Rol_sueldo{
 
 
 
-
+    
 
     public boolean chequear_contra(String contra){
         boolean mayus=false;

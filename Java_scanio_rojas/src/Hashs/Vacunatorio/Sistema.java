@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Sistema {
-private HashMap<Integer, Ciudadano> mapa;
+    private HashMap<Integer, Ciudadano> mapa;
 
 
     public Sistema(HashMap<Integer, Ciudadano> mapa) {

@@ -2,7 +2,7 @@
 
     import java.util.HashSet;
 
-    public class Plato {
+    public class    Plato {
         private String nombre;
         private HashSet<String> ingredientes;
         private int calorias;

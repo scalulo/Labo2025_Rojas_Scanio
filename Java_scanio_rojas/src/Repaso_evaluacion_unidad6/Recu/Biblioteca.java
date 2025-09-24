@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Biblioteca {
     private HashMap<Integer,Libro> libros; //relacion isbn, libro
@@ -19,6 +20,18 @@ public class Biblioteca {
 
     public Biblioteca(HashMap<Integer, Libro> libros) {
         this.libros = libros;
+    }
+
+    public String mas_receinte(){
+        LocalDate f_reciente=LocalDate.MIN   ;
+        String isbn="";
+        for (Libro l:libros.values()){
+            if(l.getFecha_adq().isAfter(f_reciente)){
+                f_reciente=l.getFecha_adq();
+                isbn=l.getIsbn();
+            }
+        }
+        return isbn;
     }
 
     public void idiomas() {
@@ -73,5 +86,6 @@ public class Biblioteca {
         Biblioteca biblioteca = new Biblioteca(mapaLibros);
 
         biblioteca.idiomas();
+
     }
 }
