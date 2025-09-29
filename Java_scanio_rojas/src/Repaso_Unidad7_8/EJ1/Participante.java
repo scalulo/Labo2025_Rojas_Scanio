@@ -1,6 +1,4 @@
-package Repaso_Unidad7_8;
-
-import Modificadores.Aplicacion_Mascotas.Mascota;
+package Repaso_Unidad7_8.EJ1;
 
 import java.time.LocalDate;
 

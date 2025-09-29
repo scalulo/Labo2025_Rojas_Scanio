@@ -1,11 +1,13 @@
-package Repaso_Unidad7_8;
+package Repaso_Unidad7_8.EJ1;
 
-import Unidad1.Persona;
+import Repaso_Unidad7_8.EJ1.Expeciones.ErrorCocina;
+import Repaso_Unidad7_8.EJ1.Expeciones.ErrorServir;
+import Repaso_Unidad7_8.EJ1.Interfaces.PlatoEntrada;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 
-public class Principiante extends Participante implements Cocinar,Servir {
+public class Principiante extends Participante implements PlatoEntrada {
     private HashSet<String> prohibidos;
 
     public Principiante(String nombre, String apellido, LocalDate f, String l,Color c, HashSet<String> prohibidos) {
@@ -33,12 +35,7 @@ public class Principiante extends Participante implements Cocinar,Servir {
         }
     }
 
-    public boolean deben(Plato p){
-        if(p.getClass().equals(Entrada.class)){
-            return true;
-        }
-        return false;
-    }
+
     public boolean puedo(Plato p){
         int i=0;
         for(String s:prohibidos){
@@ -61,11 +58,9 @@ public class Principiante extends Participante implements Cocinar,Servir {
     }
 
     @Override
-    public void Cocinar(Plato p) throws ErrorCocina {
-        if(deben(p)==false){
-            throw new ErrorCocina("El plato no es una entrada");
-        }
-        else if(puedo(p)==false){
+    public void cocinar(Entrada p) throws ErrorCocina {
+
+         if(puedo(p)==false){
             throw new ErrorCocina("El plato tiene un ingrediente prohibido");
         }
         else{
@@ -74,13 +69,11 @@ public class Principiante extends Participante implements Cocinar,Servir {
     }
 
     @Override
-    public void servir(Plato p) throws ErrorServir {
-        if(deben(p)){
+    public void servir(Entrada p) throws ErrorServir {
+
             System.out.println("Plato servido");
-        }
-        else{
-            throw new ErrorServir("El plato no es una entrada");
-        }
+
+
     }
 
 }

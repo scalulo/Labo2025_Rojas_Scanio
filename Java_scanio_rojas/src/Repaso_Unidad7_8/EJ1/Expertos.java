@@ -1,8 +1,13 @@
-package Repaso_Unidad7_8;
+package Repaso_Unidad7_8.EJ1;
+
+import Repaso_Unidad7_8.EJ1.Expeciones.ErrorCocina;
+import Repaso_Unidad7_8.EJ1.Expeciones.ErrorServir;
+import Repaso_Unidad7_8.EJ1.Interfaces.PlatoEntrada;
+import Repaso_Unidad7_8.EJ1.Interfaces.PlatoPrincipal;
 
 import java.time.LocalDate;
 
-public class Expertos extends Participante implements Cocinar,Servir {
+public class Expertos extends Participante implements PlatoEntrada, PlatoPrincipal {
     private static int tiempo=80;
     private int tiempo_actual;
 
@@ -44,13 +49,13 @@ public class Expertos extends Participante implements Cocinar,Servir {
     @Override
     public void preparar_lugar() {
         this.tiempo_actual=-5;
-        System.out.println("Perdi 5 mins preparando la mesa por lo que mi tiempo restante es: "+tiempo_actual);
+        System.out.println("Perdi 5 minutos preparando la mesa por lo que mi tiempo restante es: "+tiempo_actual);
     }
 
 
 
     @Override
-    public void Cocinar(Plato p) throws ErrorCocina {
+    public void cocinar(Principal p) throws ErrorCocina {
         if(debo(p)==false){
             throw new ErrorCocina("El plato toma mucho tiempo");
         }
@@ -63,9 +68,29 @@ public class Expertos extends Participante implements Cocinar,Servir {
     }
 
     @Override
-    public void servir(Plato p) throws ErrorServir {
+    public void servir( Principal p) throws ErrorServir {
 
             System.out.println("Plato servido");
+
+    }
+
+    @Override
+    public void cocinar(Entrada p) throws ErrorCocina {
+        if(debo(p)==false){
+            throw new ErrorCocina("El plato toma mucho tiempo");
+        }
+
+        else{
+            System.out.println("Plato cocinado");
+
+            this.tiempo_actual=-p.getCoccion();
+        }
+    }
+
+    @Override
+    public void servir( Entrada p) throws ErrorServir {
+
+        System.out.println("Plato servido");
 
     }
 }
