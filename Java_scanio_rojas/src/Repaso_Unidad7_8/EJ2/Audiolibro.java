@@ -8,7 +8,7 @@ public class Audiolibro extends Publicacion{
     private int duracion;
     private int peso;
 
-    public Audiolibro(String titulo, Autor autor, LocalDate anio_pub, int stock, int duracion, int peso) {
+    public Audiolibro(String titulo, Autor autor, int anio_pub, int stock, int duracion, int peso) {
         super(titulo, autor, anio_pub, stock);
         this.duracion = duracion;
         this.peso = peso;
@@ -18,10 +18,7 @@ public class Audiolibro extends Publicacion{
         return duracion;
     }
 
-    @Override
-    public int get_multa() {
-        return 0;
-    }
+
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;

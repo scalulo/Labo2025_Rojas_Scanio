@@ -35,13 +35,14 @@ public class Revista extends Publicacion implements Prestar {
     }
 
     @Override
-    public String prestar(Publicacion pub, Usuario user) {
+    public Prestamo prestar(Usuario user) {
         Prestamo p;
+        Revista pub=this;
         if(pub.getAnio_pub()<2020){
-             p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(10));
+             p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(10),true);
         }
         else{
-             p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(3));
+             p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(3),true);
         }
 
         if (user.getPub_prestamo().containsKey(pub)) {
@@ -50,8 +51,10 @@ public class Revista extends Publicacion implements Prestar {
         } else {
             user.getPub_prestamo().put(pub, 1);
         }
+        user.getPrestamos_realizados().add(p);
 
 
-        return "usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " + p.getFecha_devolucion_estimada();
+        System.out.println("usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " + p.getFecha_devolucion_estimada());
+        return p;
     }
 }

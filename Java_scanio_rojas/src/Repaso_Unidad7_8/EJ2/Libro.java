@@ -33,8 +33,9 @@ public class Libro extends Publicacion implements Prestar {
     }
 
     @Override
-    public String prestar(Publicacion pub, Usuario user) {
-        Prestamo p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(15));
+    public Prestamo prestar(Usuario user) {
+        Libro pub= this;
+        Prestamo p=new Prestamo(pub,user.getNumero_socio(),LocalDate.now(),LocalDate.now().plusDays(15),true);
 
         if (user.getPub_prestamo().containsKey(pub)) {
             int actual = user.getPub_prestamo().get(pub);
@@ -43,7 +44,8 @@ public class Libro extends Publicacion implements Prestar {
             user.getPub_prestamo().put(pub, 1);
         }
 
-
-        return "usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " + p.getFecha_devolucion_estimada();
+        user.getPrestamos_realizados().add(p);
+        System.out.println("usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " + p.getFecha_devolucion_estimada());
+        return p;
     }
 }

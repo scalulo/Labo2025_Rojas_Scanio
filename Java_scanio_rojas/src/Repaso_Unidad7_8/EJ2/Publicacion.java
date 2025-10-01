@@ -49,5 +49,4 @@ public abstract class Publicacion {
         this.stock = stock;
     }
 
-    public abstract int get_multa();
 }
