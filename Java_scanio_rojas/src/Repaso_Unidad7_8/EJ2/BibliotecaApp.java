@@ -19,14 +19,17 @@ public class BibliotecaApp {
 
         // Crear publicaciones
         Libro libro = new Libro("1984", autor, 1949, 10, false);
+        Libro libro1 = new Libro("hola", autor, 1949, 0, false);
         Revista revistaVieja = new Revista("Ciencia Hoy", autor, 2010, 3, "DistribuidoraLarga123");
         Revista revistaNueva = new Revista("Comics", autor, 2021, 2, "Short");
 
         publicaciones.add(libro);
+        publicaciones.add(libro1);
         publicaciones.add(revistaVieja);
         publicaciones.add(revistaNueva);
 
         prestables.add(libro);
+        prestables.add(libro1);
         prestables.add(revistaVieja);
         prestables.add(revistaNueva);
 
@@ -36,32 +39,30 @@ public class BibliotecaApp {
         // Crear usuario
         Usuario u = new Usuario(
                 "Juan", 20, "Calle Falsa 123", "Perez",
-                1, LocalDate.of(2005, 1, 1), 0,
+                1, LocalDate.of(2005, 1, 1), 1111110,
                 "juan@mail.com", new HashSet<>(), new HashMap<>(), new HashSet<>()
         );
 
         // === Pruebas de búsqueda ===
+
+        System.out.println(sistema.busqueda("1984"));
+
         try {
-            System.out.println("titulo: " + libro.getTitulo() +
-                    ", autor: " + libro.getAutor() +
-                    ", ano: " + libro.getAnio_pub() +
-                    ". si quiere tomelo prestado");
-        } catch (Exception e) {
+            System.out.println(sistema.es_prestable(libro1));
+
+        } catch  (Exception e){
             System.out.println(e.getMessage());
         }
 
         try {
-            System.out.println("No tenemos el libro");
+            System.out.println(sistema.busqueda("asd"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        // === Disponibilidad ===
-        System.out.println("esta disponible para ser prestado");
 
         // === Excepciones de disponibilidad ===
-        System.out.println("no se puede dar a prestamo");
-        System.out.println("no hay stock suficiente");
+
 
         // === Prestamos ===
         Prestamo p1 = libro.prestar(u);        // Libro → +15 días
@@ -72,13 +73,10 @@ public class BibliotecaApp {
         // === Devolución fuera de fecha ===
         p1.setFecha_devolucion_estimada(LocalDate.now().minusDays(1)); // forzar vencido
         u.devolver_prestamo(p1); // esto ya imprime "prestamo devuelto fuera de fecha"
-
+        System.out.println(u.getCredito_ganado());
         // === Multas ===
-        System.out.println("multa por libro: 7500");
-        System.out.println("multa por revista: 3500");
-
+        System.out.println(u.solicitar_extension_de_prestamo(p2));
         // === Extensión de préstamo ===
-        System.out.println("prestamo extendido");
-        System.out.println("no es posible extender el prestamo");
+        System.out.println(p1.getFecha_devolucion_estimada());
     }
 }

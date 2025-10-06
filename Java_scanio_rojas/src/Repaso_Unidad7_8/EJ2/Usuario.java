@@ -108,14 +108,17 @@ public class Usuario extends Persona {
         try {
 
            if(LocalDate.now().isAfter(p.getFecha_devolucion_estimada())) {
+                p.setActivo(false);
                throw new Fuera_de_fecha("Prestamo devuelto fuera de fecha");
            }
                System.out.println("prestamo devuelto con exito");
+                p.setActivo(false);
                return 0;
 
 
        } catch (Fuera_de_fecha e) {
            credito_ganado -= p.getPub().get_multa();
+            System.out.println("prestamo devuelto fuera de fecha, multa de: "+p.getPub().get_multa());
            return p.getPub().get_multa();
        }
 
@@ -134,7 +137,7 @@ public class Usuario extends Persona {
 
     public String solicitar_extension_de_prestamo(Prestamo p) {
         try {
-            if (this.credito_ganado < 0 || prestamosActivos() > 2) {
+            if (this.credito_ganado < 0 || this.prestamosActivos() > 2) {
                 throw new Extension_fallida("No es posible extender el préstamo");
             }
 
@@ -142,7 +145,7 @@ public class Usuario extends Persona {
                 Libro libro = (Libro) p.getPub();
                 if (libro.getStock() > 5) {
                     p.setFecha_devolucion_estimada(p.getFecha_devolucion_estimada().plusDays(7));
-                    return "Préstamo extendido";
+                    return "prestamo extendido";
                 } else {
                     throw new Extension_fallida("No es posible extender el préstamo ");
                 }

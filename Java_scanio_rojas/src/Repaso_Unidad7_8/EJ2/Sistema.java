@@ -46,24 +46,30 @@ public class Sistema {
         for(Publicacion pub:publicaciones){
 
             if(nombre.equals(pub.getTitulo())){
-                System.out.println(pub.getTitulo()+" lo escribio: "+pub.getAutor()+" se publico el año: "+pub.getAnio_pub());
-
-               return pub.getTitulo()+" lo escribio: "+pub.getAutor()+" se publico el año: "+pub.getAnio_pub() + ", ademas "+es_prestable(pub);
-
+                    if (es_prestable(pub)) {
+                        return "titulo " + pub.getTitulo() + " autor: " + pub.getAutor() + " se publico el ano: " + pub.getAnio_pub() + ", ademas si quiere tomelo prestado";
+                    }
+                    else{
+                        return "titulo " + pub.getTitulo() + " autor: " + pub.getAutor() + " se publico el ano: " + pub.getAnio_pub() + ", pero no se puede dar a prestamo";
+                    }
             }
         }
         throw new  No_encontrado("No tenemos el libro");
     }
 
-    public String es_prestable(Publicacion pub){
-        if(pub instanceof Prestar){
-            return "Estpa disponible para ser prestado";
+    public Boolean es_prestable(Publicacion pub){
+
+         if (pub.getStock()==0){
+        throw new No_stock("sin stock");
+
         }
-        else if (pub.getStock()==0){
-        throw new No_stock("No hay stock suficiente");
+        else if(pub instanceof Prestar){
+            System.out.println("esta disponible para ser prestado");
+            return true ;
         }
+
         else{
-            throw new No_prestable("No se puede dar a prestamo");
+            throw new No_prestable("no se puede dar a prestamo");
         }
     }
 

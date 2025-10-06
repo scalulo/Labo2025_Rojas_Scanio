@@ -4,6 +4,7 @@ import Repaso_Unidad7_8.EJ2.Interfaces.Prestar;
 import Try_catch.Biblioteca_virtual.Autor;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Libro extends Publicacion implements Prestar {
     private boolean tiene_saga;
@@ -45,7 +46,7 @@ public class Libro extends Publicacion implements Prestar {
         }
 
         user.getPrestamos_realizados().add(p);
-        System.out.println("usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " + p.getFecha_devolucion_estimada());
+        System.out.println("usted se llevo el libro: " + pub.getTitulo() + " y la fecha de devolucion es: " +(ChronoUnit.DAYS.between(LocalDate.now(),p.getFecha_devolucion_estimada()))+" dias");
         return p;
     }
 }
