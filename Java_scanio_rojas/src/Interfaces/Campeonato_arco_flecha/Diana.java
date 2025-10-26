@@ -38,4 +38,6 @@ public abstract class Diana {
     }
 
     public abstract double area();
+
+
 }

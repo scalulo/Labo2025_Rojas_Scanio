@@ -43,6 +43,8 @@ public class MasterChefApp {
                     System.out.println("Error: " + e.getMessage());
                 }
 
+
+
                 System.out.println("\n=== Intermedio ===");
                 intermedio.preparar_lugar();
                 try {

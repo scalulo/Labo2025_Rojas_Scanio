@@ -79,7 +79,7 @@ return null;
         sistema1.agregarSensores(sensorTemperatura1);
 
         sistema1.alarma();
-
+        System.out.println(sistema1.obtener_info());
 
 
 
