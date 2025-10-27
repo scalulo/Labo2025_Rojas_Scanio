@@ -46,6 +46,7 @@ public class Epica extends Carta implements Jugables{
         }
         else{
             System.out.println("Mori en la batalla protegiendo al rey");
+            setVida(0);
         }
     }
 
