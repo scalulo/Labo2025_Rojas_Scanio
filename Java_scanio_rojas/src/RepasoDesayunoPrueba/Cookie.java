@@ -41,7 +41,7 @@ public class Cookie extends Preparacion implements Vendible{
 
     @Override
     public boolean valido(int cantidad) {
-        return  cantidad>=getStock();
+        return  cantidad<=getStock();
     }
 
     @Override
